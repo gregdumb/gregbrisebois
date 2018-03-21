@@ -10,6 +10,9 @@ export const query = graphql`
 				  		title
 				  		date
 					}
+					fields {
+						slug
+					}
 					html
 			  	}
 			}
@@ -21,7 +24,7 @@ const Projects = ({ data }) => (
 	<div>
 		<h1>My Projects</h1>
 		{data.allMarkdownRemark.edges.map(({node}) => (
-			<Link>
+			<Link to={node.fields.slug} >
 				<p>{node.frontmatter.title}{" - "}{node.frontmatter.date}</p>
 			</Link>
 		))}
