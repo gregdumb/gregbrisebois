@@ -2,6 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
+const HeaderLink = ({ text, path }) => (
+	<li style={{display: 'inline-block', marginLeft: '1em' }}>
+		<Link to={path} style={{color: 'white'}} >{text}</Link>
+	</li>
+)
+
 const Header = ({ headerTitle }) => (
 	<div
 		style={{
@@ -14,7 +20,7 @@ const Header = ({ headerTitle }) => (
 				maxWidth: 960,
 				padding: '1.45rem 1.0875rem',
 			}} >
-			<h1 style={{ margin: 0 }}>
+			<h1 style={{ margin: 0, display: 'inline' }}>
 				<Link
 					to="/"
 					style={{
@@ -24,6 +30,11 @@ const Header = ({ headerTitle }) => (
 					{headerTitle}
 				</Link>
 			</h1>
+			<ul style={{display: 'inline-block', float: 'right', color: 'white'}}>
+				<HeaderLink text="Home" path="/" />
+				<HeaderLink text="Projects" path="/projects/" />
+				<HeaderLink text="404" path="/404/" />
+			</ul>
 		</div>
 	</div>
 )
