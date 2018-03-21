@@ -1,9 +1,27 @@
+:root {
+  --primary-bg: darkred;
+  --primary-text: white;
+  --page-bg: beige;
+}
+
 html {
   font-family: sans-serif;
 }
 
 body {
-  margin: 0
+  margin: 0;
+  background-color: var(--page-bg);
+}
+
+.navbar {
+  color: var(--primary-text);
+  background-color: var(--primary-bg);
+  margin-bottom: 0;
+}
+
+.navlink {
+  color: var(--primary-text);
+  text-decoration: none;
 }
 
 

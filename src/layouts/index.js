@@ -15,31 +15,58 @@ export const query = graphql`
 	}
 `;
 
-const TemplateWrapper = ({ children, data }) => (
-	<div>
-		<Helmet
-			title={data.site.siteMetadata.title}
-			meta={[
-				{ name: 'description', content: 'Sample' },
-				{ name: 'keywords', content: 'sample, something' },
-			]}
-		/>
-		<Header headerTitle={data.site.siteMetadata.title} />
-		<div
-			style={{
-				margin: '0 auto',
-				maxWidth: 960,
-				padding: '0px 1.0875rem 1.45rem',
-				paddingTop: 0,
-			}}
-		>
-			{children()}
-		</div>
-	</div>
-)
+class TemplateWrapper extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			sidebarIsOpen: false
+		}
+	}
+
+	render() {
+		let {data, children} = this.props;
+
+		return(
+			<div>
+				<Helmet
+					title={data.site.siteMetadata.title}
+					meta={[
+						{ name: 'description', content: 'Sample' },
+						{ name: 'keywords', content: 'sample, something' },
+					]}
+				/>
+				<Header headerTitle={data.site.siteMetadata.title} onOpenSidebar={() => this.setState({sidebarIsOpen: !this.state.sidebarIsOpen})} />
+				<div
+					style={{
+						margin: '0 auto',
+						maxWidth: 1200,
+						padding: '1rem 1.0875rem 1.45rem',
+						paddingTop: 0,
+						backgroundColor: 'white'
+					}}
+				>
+					{children()}
+				</div>
+				<div style={{
+					position: 'absolute',
+					top: 0,
+					left: 0,
+					width: '200px',
+					minHeight: '100%',
+					backgroundColor: 'white',
+					display: (this.state.sidebarIsOpen) ? 'block' : 'none'
+				}}>
+					<p>Sidebar goes here</p>
+				</div>
+			</div>
+		)
+	}
+}
 
 TemplateWrapper.propTypes = {
 	children: PropTypes.func,
+	data: PropTypes.object,
 }
 
 export default TemplateWrapper
