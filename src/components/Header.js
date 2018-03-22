@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import { colors } from '../theme'
 
 const HeaderLink = ({ text, path }) => (
 	<li style={{display: 'inline-block', marginLeft: '1em' }}>
@@ -9,13 +10,21 @@ const HeaderLink = ({ text, path }) => (
 )
 
 const Header = ({ headerTitle, onOpenSidebar }) => (
-	<div className="navbar" >
-		<div
-			style={{
-				margin: '0 auto',
-				maxWidth: 960,
-				padding: '1.45rem 1.0875rem',
-			}} >
+	<header style={{
+		backgroundColor: colors.primary,
+		color: colors.white,
+		width: '100%',
+		position: 'fixed',
+		zIndex: 1,
+		top: 0,
+		left: 0,
+	}} >
+		<div style={{
+			display: 'flex',
+			flexDirection: 'row',
+			alignItems: 'center',
+			height: '4rem',
+		}} >
 			<a onClick={onOpenSidebar}>Click</a>
 			<h1 style={{ margin: 0, display: 'inline' }}>
 				<Link
@@ -30,7 +39,7 @@ const Header = ({ headerTitle, onOpenSidebar }) => (
 				<HeaderLink text="404" path="/404/" />
 			</ul>
 		</div>
-	</div>
+	</header>
 )
 
 Header.propTypes = {
