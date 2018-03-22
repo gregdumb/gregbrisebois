@@ -11,7 +11,7 @@ const IndexPage = () => (
 			color: 'white'
 			}} >
 			<Container>
-				<h1 css={{textAlign: 'center'}} >Welcome</h1>
+				<h1 css={{textAlign: 'center', fontSize: '4rem'}} >Welcome</h1>
 			</Container>
 		</header>
 		<div>
