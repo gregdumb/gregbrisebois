@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import { colors } from '../theme'
+import { colors, media } from '../theme'
 
 const HeaderLink = ({ text, path }) => (
 	<li style={{display: 'inline-block', marginLeft: '1em' }}>
@@ -24,8 +24,10 @@ const Header = ({ headerTitle, onOpenSidebar }) => (
 			flexDirection: 'row',
 			alignItems: 'center',
 			height: '4rem',
+			[media.lessThan('large')]: {
+				height: '3rem'
+			}
 		}} >
-			<a onClick={onOpenSidebar}>Click</a>
 			<h1 style={{ margin: 0, display: 'inline' }}>
 				<Link
 					to="/"
