@@ -1,13 +1,27 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Container from '../components/Container'
 
 const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to my site.</p>
-    <p>I have som projects and stuff here.</p>
-    <Link to="/projects/">Go to projects</Link>
-  </div>
+	<div>
+		<header css={{
+			paddingTop: '5rem',
+			paddingBottom: '5rem',
+			background: 'cornflowerblue',
+			color: 'white'
+			}} >
+			<Container>
+				<h1 css={{textAlign: 'center'}} >Welcome</h1>
+			</Container>
+		</header>
+		<div>
+			<Container>
+				<p>Welcome to my site.</p>
+				<p>I have som projects and stuff here.</p>
+				<Link to="/projects/">Go to projects</Link>
+			</Container>
+		</div>
+  	</div>
 )
 
-export default IndexPage
+export default IndexPage;

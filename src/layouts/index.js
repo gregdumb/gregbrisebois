@@ -41,9 +41,6 @@ class TemplateWrapper extends React.Component {
 				<Header headerTitle={data.site.siteMetadata.title} onOpenSidebar={() => this.setState({sidebarIsOpen: !this.state.sidebarIsOpen})} />
 				<div
 					css={{
-						padding: '1rem 1.0875rem 1.45rem',
-						paddingTop: 0,
-						backgroundColor: 'white',
 						marginTop: sizes.header.large,
 						[media.lessThan('large')]: {
 							marginTop: sizes.header.small,

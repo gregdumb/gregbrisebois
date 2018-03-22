@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import MarkdownBody from '../components/MarkdownBody'
 
 export const query = graphql`
 	query ProjectQuery($slug: String!) {
@@ -15,14 +16,8 @@ export const query = graphql`
 
 const Project = ({data}) => {
 	
-	console.log(data);
-	console.log(query);
-	
 	return(
-		<div>
-			<h1>{data.markdownRemark.frontmatter.title}</h1>
-			<div dangerouslySetInnerHTML={{__html: data.markdownRemark.html}} />
-		</div>
+		<MarkdownBody markdownRemark={data.markdownRemark} />
 	);
 }
 

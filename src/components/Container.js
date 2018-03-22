@@ -8,7 +8,11 @@ const Container = ({ children }) => (
 		paddingRight: '1rem',
 		marginLeft: 'auto',
 		marginRight: 'auto',
-		maxWidth: '1260px'
+		maxWidth: '1260px',
+		[media.lessThan('medium')]: {
+			paddingLeft: '0.75rem',
+			paddingRight: '0.75rem'
+		}
 	}} >
 		{children}
 	</div>
