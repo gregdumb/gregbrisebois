@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
+import { sizes, media } from '../theme'
+
 import Header from '../components/Header'
 import './index.css'
 
@@ -38,12 +40,14 @@ class TemplateWrapper extends React.Component {
 				/>
 				<Header headerTitle={data.site.siteMetadata.title} onOpenSidebar={() => this.setState({sidebarIsOpen: !this.state.sidebarIsOpen})} />
 				<div
-					style={{
-						margin: '0 auto',
-						maxWidth: 1200,
+					css={{
 						padding: '1rem 1.0875rem 1.45rem',
 						paddingTop: 0,
-						backgroundColor: 'white'
+						backgroundColor: 'white',
+						marginTop: sizes.header.large,
+						[media.lessThan('large')]: {
+							marginTop: sizes.header.small,
+						}
 					}}
 				>
 					{children()}

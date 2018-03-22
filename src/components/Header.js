@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import { colors, media } from '../theme'
+import { colors, sizes, media } from '../theme'
 import Container from './Container';
 
 const HeaderLink = ({ text, path }) => (
@@ -25,9 +25,9 @@ const Header = ({ headerTitle, onOpenSidebar }) => (
 				display: 'flex',
 				flexDirection: 'row',
 				alignItems: 'center',
-				height: '4rem',
+				height: sizes.header.large,
 				[media.lessThan('large')]: {
-					height: '3rem'
+					height: sizes.header.small
 				}
 			}} >
 				<h1 style={{ margin: 0, display: 'inline' }}>

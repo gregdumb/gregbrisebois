@@ -4,8 +4,15 @@
  */
 
 const colors = {
-	primary: 'darkred',
+	primary: '#222',
 	white: 'white'
+}
+
+const sizes = {
+	header: {
+		small: '3rem',
+		large: '4rem',
+	}
 }
 
 const SIZES = {
@@ -61,4 +68,4 @@ const media = {
 	},
   };
 
-export { colors, media };
+export { colors, sizes, media };
