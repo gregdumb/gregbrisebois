@@ -10,7 +10,7 @@ const HeaderLink = ({ text, path }) => (
 )
 
 const Header = ({ headerTitle, onOpenSidebar }) => (
-	<header style={{
+	<header css={{
 		backgroundColor: colors.primary,
 		color: colors.white,
 		width: '100%',
@@ -19,7 +19,7 @@ const Header = ({ headerTitle, onOpenSidebar }) => (
 		top: 0,
 		left: 0,
 	}} >
-		<div style={{
+		<div css={{
 			display: 'flex',
 			flexDirection: 'row',
 			alignItems: 'center',
