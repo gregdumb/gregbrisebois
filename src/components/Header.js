@@ -5,9 +5,29 @@ import { colors, sizes, media } from '../theme'
 import Container from './Container';
 
 const HeaderLink = ({ text, path }) => (
-	<li style={{display: 'inline-block', marginLeft: '1em' }}>
-		<Link to={path} className="navlink" >{text}</Link>
-	</li>
+	<Link
+		to={path}
+		css={{
+			height: '100%',
+			color: 'white',
+			textDecoration: 'none',
+			fontSize: '20px',
+			[media.lessThan('large')]: {
+				fontSize: '16px',
+			}
+		}} >
+		<div css={{
+			display: 'flex',
+			alignItems: 'center',
+			height: '100%',
+			padding: '0 0.5em',
+			':hover': {
+				backgroundColor: colors.veryDarkHover,
+			}
+		}} >
+			{text}
+		</div>
+	</Link>
 )
 
 const Header = ({ headerTitle, onOpenSidebar }) => (
@@ -30,18 +50,49 @@ const Header = ({ headerTitle, onOpenSidebar }) => (
 					height: sizes.header.small
 				}
 			}} >
-				<h1 style={{ margin: 0, display: 'inline' }}>
+				<h1 css={{
+					margin: 0,
+					display: 'inline',
+					fontSize: '40px',
+					whiteSpace: 'nowrap',
+					[media.lessThan('large')]: {
+						fontSize: '30px',
+					}
+				}} >
 					<Link
 						to="/"
 						className="navlink" >
 						{headerTitle}
 					</Link>
 				</h1>
-				<ul style={{display: 'inline-block', float: 'right', color: 'white'}}>
+				<div css={{
+					display: 'flex',
+					alignItems: 'center',
+					overflowY: 'auto',
+					height: '100%',
+					paddingLeft: '2em',
+					[media.lessThan('small')]: {
+						paddingLeft: '0.5em',
+						paddingRight: '0.5em',
+						maskImage: 'linear-gradient(to right, transparent, black 20px, black 90%, transparent)',
+					}
+				}}>
 					<HeaderLink text="Home" path="/" />
 					<HeaderLink text="Projects" path="/projects/" />
 					<HeaderLink text="404" path="/404/" />
-				</ul>
+				</div>
+				<a
+					href="https://github.com/gregdumb/gregbrisebois"
+					target="_blank"
+					css={{
+						marginLeft: 'auto',
+						color: 'white',
+						[media.lessThan('medium')]: {
+							display: 'none'
+						}
+					}} >
+					<img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" css={{height: 30, color: 'white'}} />
+				</a>
 			</div>
 		</Container>
 	</header>

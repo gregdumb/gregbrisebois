@@ -5,13 +5,16 @@
 
 const colors = {
 	primary: '#222',
-	white: 'white'
+	white: 'white',
+	
+	verydark: "#222",
+	veryDarkHover: "#555",
 }
 
 const sizes = {
 	header: {
-		small: '3rem',
-		large: '4rem',
+		small: '40px',
+		large: '60px',
 	}
 }
 
