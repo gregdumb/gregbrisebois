@@ -53,10 +53,10 @@ const Header = ({ headerTitle, onOpenSidebar }) => (
 				<h1 css={{
 					margin: 0,
 					display: 'inline',
-					fontSize: '40px',
+					fontSize: '30px',
 					whiteSpace: 'nowrap',
 					[media.lessThan('large')]: {
-						fontSize: '30px',
+						fontSize: '25px',
 					}
 				}} >
 					<Link
