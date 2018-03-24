@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import MarkdownBody from '../components/MarkdownBody'
+import PageContent from '../components/PageContent'
 
 export const query = graphql`
 	query ProjectQuery($slug: String!) {
@@ -17,7 +18,9 @@ export const query = graphql`
 const Project = ({data}) => {
 	
 	return(
-		<MarkdownBody markdownRemark={data.markdownRemark} />
+		<PageContent>
+			<MarkdownBody markdownRemark={data.markdownRemark} />
+		</PageContent>
 	);
 }
 
