@@ -5,7 +5,11 @@ import Helmet from 'react-helmet'
 import { sizes, media } from '../theme'
 
 import Header from '../components/Header'
+
+require('typeface-bitter')
+require('typeface-open-sans')
 import './index.css'
+
 
 export const query = graphql`
 	query LayoutQuery {
