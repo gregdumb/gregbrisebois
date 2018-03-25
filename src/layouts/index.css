@@ -28,6 +28,15 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Bitter', serif;
 }
 
+a {
+	color: #F7687F;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 
 /*html {
   font-family: sans-serif;

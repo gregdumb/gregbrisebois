@@ -11,8 +11,6 @@ require('typeface-open-sans')
 require("prismjs/themes/prism-tomorrow.css")
 import './index.css'
 
-
-
 export const query = graphql`
 	query LayoutQuery {
 		site {

@@ -14,6 +14,9 @@ const HeaderLink = ({ text, path }) => (
 			fontSize: '20px',
 			[media.lessThan('large')]: {
 				fontSize: '16px',
+			},
+			':hover': {
+				textDecoration: 'none',
 			}
 		}} >
 		<div css={{
@@ -61,7 +64,13 @@ const Header = ({ headerTitle, onOpenSidebar }) => (
 				}} >
 					<Link
 						to="/"
-						className="navlink" >
+						css={{
+							color: 'white',
+							textDecoration: 'none',
+							':hover': {
+								textDecoration: 'none',
+							}
+						}} >
 						{headerTitle}
 					</Link>
 				</h1>

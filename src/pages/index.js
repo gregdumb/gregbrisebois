@@ -9,7 +9,8 @@ const IndexPage = () => (
 			paddingTop: '5rem',
 			paddingBottom: '5rem',
 			background: 'cornflowerblue',
-			color: 'white'
+			color: 'white',
+			height: '200px',
 			}} >
 			<Container>
 				<h1 css={{textAlign: 'center', fontSize: '4rem'}} >
