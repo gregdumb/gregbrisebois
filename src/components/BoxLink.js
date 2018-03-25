@@ -4,7 +4,7 @@ import { colors, media } from '../theme'
 
 const BoxLink = ({ icon, text, to }) => (
 	<Link to={to} css={{
-		maxWidth: '200px',
+		maxWidth: '300px',
 		margin: '1rem',
 		fontSize: '1.5rem',
 		flexGrow: 1,
