@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Container from '../components/Container'
+import Typer from '../components/Typer'
 
 const IndexPage = () => (
 	<div>
@@ -11,7 +12,20 @@ const IndexPage = () => (
 			color: 'white'
 			}} >
 			<Container>
-				<h1 css={{textAlign: 'center', fontSize: '4rem'}} >Welcome</h1>
+				<h1 css={{textAlign: 'center', fontSize: '4rem'}} >
+					<Typer options={{
+						strings: [
+							'I develop websites',
+							'I develop backends',
+							'I develop games',
+							'I write tutorials',
+						],
+						typeSpeed: 70,
+						backSpeed: 70,
+						backDelay: 1000,
+						loop: true,
+					}} />
+				</h1>
 			</Container>
 		</header>
 		<div>
