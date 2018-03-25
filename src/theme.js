@@ -9,6 +9,12 @@ const colors = {
 	
 	verydark: "#222",
 	veryDarkHover: "#555",
+	
+	primaryHighlight: 'cornflowerblue',
+	primaryHighlightText: 'white',
+	
+	secondaryHighlight: '#95BA3C',
+	secondaryHighlightText: 'white',
 }
 
 const sizes = {
