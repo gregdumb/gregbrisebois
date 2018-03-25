@@ -5,7 +5,6 @@ module.exports = {
 	plugins: [
 		'gatsby-plugin-glamor',
 		'gatsby-plugin-react-helmet',
-		'gatsby-plugin-sharp',
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
@@ -22,10 +21,13 @@ module.exports = {
 						options: {
 							maxWidth: 590,
 							linkImagesToOriginal: true,
+							backgroundColor: 'transparent',
 						}
 					}
 				]
 			}
-		}
+		},
+		'gatsby-plugin-sharp',
+		'gatsby-transformer-sharp',
 	],
 };
