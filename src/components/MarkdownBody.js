@@ -1,6 +1,11 @@
 import React from 'react'
+import { css } from 'glamor'
 import Container from '../components/Container'
-import './MarkdownBody.css'
+//import './MarkdownBody.css'
+
+css.global('img', {
+	maxWidth: '100%',
+})
 
 const MarkdownBody = ({ markdownRemark }) => (
 	<div >
