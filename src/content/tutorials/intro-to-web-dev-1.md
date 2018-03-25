@@ -12,13 +12,13 @@ But learning it doesn't have to be. Instead of jumping into all the crazy modern
 Hyper-text markup language. The foundation of the web. Fundamentally, it's quite simple; it's just a markup language. A *markup language* isn't a real programming language, it just allows you to define how text appears on the screen.
 
 For instance:
-```
+```html
 <p>Hello there</p>
 ```
 Is what HTML looks like. When you 'render' the page, you don't see the `<p></p>` part, just the Hello there. The `<p>` stands for 'paragraph'; anything inside `<p></p>` will be rendered by the browser as a paragraph.
 
 Let's get a little bit fancier:
-```
+```html
 <p>
   Hello there my <strong>boy</strong>
 </p>

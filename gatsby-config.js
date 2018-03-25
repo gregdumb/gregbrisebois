@@ -23,6 +23,13 @@ module.exports = {
 							linkImagesToOriginal: true,
 							backgroundColor: 'transparent',
 						}
+					},
+					{
+						resolve: 'gatsby-remark-prismjs',
+						options: {
+							inlineCodeMarker: null,
+							aliases: {},
+						}
 					}
 				]
 			}
