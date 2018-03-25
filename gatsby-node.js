@@ -4,11 +4,22 @@ const { createFilePath } = require('gatsby-source-filesystem');
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 	const { createNodeField } = boundActionCreators;
 	if (node.internal.type === 'MarkdownRemark') {
+		// Create slug
 		const slug = createFilePath({ node, getNode, basePath: 'content' });
 		createNodeField({
 			node,
 			name: 'slug',
 			value: slug,
+		});
+		
+		// Create category
+		let folder = slug.match(/^\/[a-zA-Z]+/)[0];
+		if(folder) folder = folder.replace('/', '');
+		else folder = '';
+		createNodeField({
+			node,
+			name: 'folder',
+			value: folder
 		});
 	}
 };
