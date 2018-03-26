@@ -30,7 +30,8 @@ module.exports = {
 							inlineCodeMarker: null,
 							aliases: {},
 						}
-					}
+					},
+					'gatsby-remark-responsive-iframe',
 				]
 			}
 		},

@@ -10,8 +10,9 @@ export const query = graphql`
 			  	node {
 					frontmatter {
 				  		title
-						  date
-						  tags
+						date
+						tags
+						thumbnail
 					}
 					fields {
 						slug

@@ -8,7 +8,7 @@ const Container = ({ children, narrow }) => (
 		paddingRight: '1rem',
 		marginLeft: 'auto',
 		marginRight: 'auto',
-		maxWidth: (narrow ? '800px' : '1260px'),
+		maxWidth: (narrow ? '800px' : '1000px'),
 		[media.lessThan('medium')]: {
 			paddingLeft: '0.75rem',
 			paddingRight: '0.75rem',

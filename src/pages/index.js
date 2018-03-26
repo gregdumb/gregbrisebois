@@ -32,7 +32,7 @@ const IndexPage = () => (
 			</Container>
 		</header>
 		<div>
-			<Container>
+			<Container >
 				<h3>I'm a computer scientist based in San Jose, CA.</h3>
 				<p>This site serves as my public profile and hosting space for my projects.</p>
 				<div css={{

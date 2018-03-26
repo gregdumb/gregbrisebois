@@ -2,6 +2,7 @@
 title: Christmas Light Show
 date: "2017-12-01"
 tags: ["raspberry pi", "frontend"]
+thumbnail: "/img/showeditor.png"
 ---
 
 The show runs on a Raspberry Pi and utilizes 8 channels. The project consisted of two parts: an editor to create the shows, and a player.
