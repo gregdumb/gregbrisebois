@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import PageContent from '../components/PageContent'
+import PostLink from '../components/PostLink'
 
 export const query = graphql`
 	query ProjectsQuery {
@@ -9,12 +10,14 @@ export const query = graphql`
 			  	node {
 					frontmatter {
 				  		title
-				  		date
+						date
+						tags
 					}
 					fields {
 						slug
 					}
 					html
+					excerpt
 			  	}
 			}
 		}
@@ -25,9 +28,7 @@ const Projects = ({ data }) => (
 	<PageContent>
 		<h1>My Projects</h1>
 		{data.allMarkdownRemark.edges.map(({node}) => (
-			<Link to={node.fields.slug} >
-				<p>{node.frontmatter.title}{" - "}{node.frontmatter.date}</p>
-			</Link>
+			<PostLink node={node} />
 		))}
 	</PageContent>
 )

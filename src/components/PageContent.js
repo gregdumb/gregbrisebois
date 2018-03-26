@@ -5,7 +5,7 @@ const PageContent = ({ children }) => (
 	<div css={{
 		paddingTop: '1rem',
 	}} >
-		<Container>
+		<Container narrow>
 			{children}
 		</Container>
 	</div>
