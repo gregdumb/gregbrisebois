@@ -3,26 +3,37 @@ import PageContent from '../components/PageContent'
 
 const SkillGroup = ({ children, name }) => (
     <div css={{
-
+        marginBottom: '2em',
     }} >
         <h3>{name}</h3>
         <div css={{
             display: 'flex',
             flexDirection: 'row',
+            flexWrap: 'wrap',
         }} >
             {children}
         </div>
     </div>
 )
 
-const Skill = ({ name, image }) => (
+const Skill = ({ name, image, padding }) => (
     <div css={{
-        width: '10em',
-        border: '1px solid lightgrey',
+        width: '8em',
+        marginRight: '1em',
+        marginBottom: '1em',
+        //border: '1px solid lightgrey',
+        boxShadow: '0px 0px 10px 0px rgba(179,179,179,1)',
         textAlign: 'center',
     }} >
-        <img src={image} css={{width: '100%'}} />
-        <p >{name}</p>
+        <img src={image} css={{
+            width: '100%',
+            padding: (padding || 0),
+            boxSizing: 'border-box',
+        }} />
+        <p css={{
+            marginTop: '0.25em',
+            marginBottom: '0.25em',
+        }} >{name}</p>
     </div>
 )
 
@@ -30,9 +41,16 @@ const About = () => (
     <PageContent>
         <h1>About me</h1>
         <h2>Skills</h2>
+        <SkillGroup name={"Languages"} >
+            <Skill name="Javascript" image={'/img/logos/js-logo.jpg'} />
+            <Skill name="HTML5" image={'/img/logos/html5-logo.svg'} padding={'10%'} />
+            <Skill name="C++" image={'/img/logos/cplusplus-logo.svg'} padding={'5%'} />
+            <Skill name="Java" image={'/img/logos/java-logo.jpg'} padding={'5%'} />
+            <Skill name="Python" image={'/img/logos/python-logo.svg'} padding={'10%'} />
+        </SkillGroup>
         <SkillGroup name={"Web (Frontend)"} >
             <Skill name="React" image={'/img/logos/react-logo.jpg'} />
-            <Skill name="Gatsby" />
+            <Skill name="Gatsby" image={'/img/logos/gatsby-logo.jpg'} padding={'10%'} />
         </SkillGroup>
     </PageContent>
 )
