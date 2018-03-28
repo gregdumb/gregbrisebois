@@ -44,7 +44,7 @@ const IndexPage = () => (
 				}} >
 					<BoxLink text="Tutorials" icon="graduation-cap" to="/tutorials/" />
 					<BoxLink text="Projects" icon="wrench" to="/projects/" />
-					<BoxLink text="About" icon="question" to="/404/" />
+					<BoxLink text="About" icon="question" to="/about/" />
 				</div>
 			</Container>
 		</div>

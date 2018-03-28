@@ -89,6 +89,7 @@ const Header = ({ headerTitle, onOpenSidebar }) => (
 					<HeaderLink text="Home" path="/" />
 					<HeaderLink text="Projects" path="/projects/" />
 					<HeaderLink text="Tutorials" path="/tutorials/" />
+					<HeaderLink text="About" path="/about/" />
 				</div>
 				<a
 					href="https://github.com/gregdumb/gregbrisebois"
