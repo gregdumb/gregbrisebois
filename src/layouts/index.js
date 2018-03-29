@@ -11,6 +11,7 @@ require('typeface-bitter')
 require('typeface-open-sans')
 require("prismjs/themes/prism-tomorrow.css")
 import './index.css'
+import './hamburgers.css'
 
 
 require('./fontawesome-all')
@@ -30,8 +31,14 @@ class TemplateWrapper extends React.Component {
 		super(props);
 
 		this.state = {
-			sidebarIsOpen: false
+			dropDownVisible: false
 		}
+	}
+	
+	toggleDropDown = () => {
+		this.setState({
+			dropDownVisible: !this.state.dropDownVisible,
+		})
 	}
 
 	render() {
@@ -48,7 +55,11 @@ class TemplateWrapper extends React.Component {
 						{ name: 'keywords', content: 'sample, something' },
 					]}
 				/>
-				<Header headerTitle={data.site.siteMetadata.title} onOpenSidebar={() => this.setState({sidebarIsOpen: !this.state.sidebarIsOpen})} />
+				<Header
+					headerTitle={data.site.siteMetadata.title}
+					toggleDropDown={this.toggleDropDown}
+					dropDownVisible={this.state.dropDownVisible}
+				/>
 				<div
 					css={{
 						marginTop: sizes.header.large,
@@ -59,17 +70,6 @@ class TemplateWrapper extends React.Component {
 					}}
 				>
 					{children()}
-				</div>
-				<div style={{
-					position: 'absolute',
-					top: 0,
-					left: 0,
-					width: '200px',
-					minHeight: '100%',
-					backgroundColor: 'white',
-					display: (this.state.sidebarIsOpen) ? 'block' : 'none'
-				}}>
-					<p>Sidebar goes here</p>
 				</div>
 				<Footer />
 			</div>

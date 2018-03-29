@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { colors, sizes, media } from '../theme'
 import Container from './Container'
+import Hamburger from './Hamburger'
 
 const HeaderLink = ({ text, path }) => (
 	<Link
@@ -24,6 +25,11 @@ const HeaderLink = ({ text, path }) => (
 			alignItems: 'center',
 			height: '100%',
 			padding: '0 0.5em',
+			[media.lessThan('small')]: {
+				// For mobile dropdown
+				height: '3em',
+				fontSize: '1em',
+			},
 			':hover': {
 				backgroundColor: colors.veryDarkHover,
 			}
@@ -33,7 +39,21 @@ const HeaderLink = ({ text, path }) => (
 	</Link>
 )
 
-const Header = ({ headerTitle, onOpenSidebar }) => (
+const DropDown = ({ children, visible }) => (
+	<div css={{
+		display: visible ? 'flex' : 'none',
+		flexDirection: 'column',
+		position: 'absolute',
+		right: '0',
+		top: sizes.header.small,
+		background: colors.veryDark,
+		width: 200,
+	}} >
+		{children}
+	</div>
+)
+
+const Header = ({ headerTitle, toggleDropDown, dropDownVisible }) => (
 	<header css={{
 		background: colors.veryDark,
 		color: colors.veryDarkText,
@@ -81,9 +101,10 @@ const Header = ({ headerTitle, onOpenSidebar }) => (
 					height: '100%',
 					paddingLeft: '2em',
 					[media.lessThan('small')]: {
-						paddingLeft: '0.5em',
+						/*paddingLeft: '0.5em',
 						paddingRight: '0.5em',
-						maskImage: 'linear-gradient(to right, transparent, black 20px, black 90%, transparent)',
+						maskImage: 'linear-gradient(to right, transparent, black 20px, black 90%, transparent)',*/
+						display: 'none',
 					}
 				}}>
 					<HeaderLink text="Home" path="/" />
@@ -91,19 +112,23 @@ const Header = ({ headerTitle, onOpenSidebar }) => (
 					<HeaderLink text="Tutorials" path="/tutorials/" />
 					<HeaderLink text="About" path="/about/" />
 				</div>
-				<a
-					href="https://github.com/gregdumb/gregbrisebois"
-					target="_blank"
-					css={{
-						marginLeft: 'auto',
-						color: 'white',
-						[media.lessThan('medium')]: {
-							display: 'none'
-						}
-					}} >
-					<img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" css={{height: 30, color: 'white'}} />
+				<a onClick={toggleDropDown} css={{
+					display: 'none',
+					color: colors.veryDarkText,
+					marginLeft: 'auto',
+					[media.lessThan('small')]: {
+						display: 'block',
+					}
+				}} >
+					<Hamburger isActive={dropDownVisible} />
 				</a>
 			</div>
+			<DropDown visible={dropDownVisible}>
+				<HeaderLink text="Home" path="/" />
+				<HeaderLink text="Projects" path="/projects/" />
+				<HeaderLink text="Tutorials" path="/tutorials/" />
+				<HeaderLink text="About" path="/about/" />
+			</DropDown>
 		</Container>
 	</header>
 )
