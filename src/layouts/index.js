@@ -5,11 +5,13 @@ import Helmet from 'react-helmet'
 import { sizes, media } from '../theme'
 
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 require('typeface-bitter')
 require('typeface-open-sans')
 require("prismjs/themes/prism-tomorrow.css")
 import './index.css'
+
 
 require('./fontawesome-all')
 
@@ -36,7 +38,9 @@ class TemplateWrapper extends React.Component {
 		let {data, children} = this.props;
 
 		return(
-			<div>
+			<div css={{
+				
+			}} >
 				<Helmet
 					title={data.site.siteMetadata.title}
 					meta={[
@@ -48,6 +52,7 @@ class TemplateWrapper extends React.Component {
 				<div
 					css={{
 						marginTop: sizes.header.large,
+						minHeight: `calc(100vh - ${sizes.header.large})`,
 						[media.lessThan('large')]: {
 							marginTop: sizes.header.small,
 						}
@@ -66,6 +71,7 @@ class TemplateWrapper extends React.Component {
 				}}>
 					<p>Sidebar goes here</p>
 				</div>
+				<Footer />
 			</div>
 		)
 	}

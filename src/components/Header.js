@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { colors, sizes, media } from '../theme'
-import Container from './Container';
+import Container from './Container'
 
 const HeaderLink = ({ text, path }) => (
 	<Link
