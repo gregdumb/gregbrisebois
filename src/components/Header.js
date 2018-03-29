@@ -5,9 +5,10 @@ import { colors, sizes, media } from '../theme'
 import Container from './Container'
 import Hamburger from './Hamburger'
 
-const HeaderLink = ({ text, path }) => (
+const HeaderLink = ({ text, path, onClick }) => (
 	<Link
 		to={path}
+		onClick={onClick}
 		css={{
 			height: '100%',
 			color: 'white',
@@ -124,10 +125,10 @@ const Header = ({ headerTitle, toggleDropDown, dropDownVisible }) => (
 				</a>
 			</div>
 			<DropDown visible={dropDownVisible}>
-				<HeaderLink text="Home" path="/" />
-				<HeaderLink text="Projects" path="/projects/" />
-				<HeaderLink text="Tutorials" path="/tutorials/" />
-				<HeaderLink text="About" path="/about/" />
+				<HeaderLink text="Home" path="/" onClick={toggleDropDown} />
+				<HeaderLink text="Projects" path="/projects/" onClick={toggleDropDown} />
+				<HeaderLink text="Tutorials" path="/tutorials/" onClick={toggleDropDown} />
+				<HeaderLink text="About" path="/about/" onClick={toggleDropDown} />
 			</DropDown>
 		</Container>
 	</header>

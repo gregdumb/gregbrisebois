@@ -11,7 +11,16 @@ const Hamburger = ({ isActive, type }) => {
 	let classStr = "hamburger " + typeStr + activeStr;
 	
 	return(
-		<button className={classStr} type="button" style={{padding: 0}} >
+		<button
+			className={classStr}
+			type="button"
+			style={{padding: 0}}
+			css={{
+				':focus': {
+					outline: 'none',
+				}
+			}}
+		 >
 			<span className="hamburger-box" css={{
 				transform: 'scale(0.7)',
 			}} >
