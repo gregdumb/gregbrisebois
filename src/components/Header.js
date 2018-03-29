@@ -35,8 +35,8 @@ const HeaderLink = ({ text, path }) => (
 
 const Header = ({ headerTitle, onOpenSidebar }) => (
 	<header css={{
-		backgroundColor: colors.primary,
-		color: colors.white,
+		background: colors.veryDark,
+		color: colors.veryDarkText,
 		width: '100%',
 		position: 'fixed',
 		zIndex: 1,

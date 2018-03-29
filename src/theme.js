@@ -7,7 +7,8 @@ const colors = {
 	primary: '#222',
 	white: 'white',
 	
-	verydark: "#222",
+	veryDark: "#222",
+	veryDarkText: 'white',
 	veryDarkHover: "#555",
 	
 	primaryHighlight: 'cornflowerblue',
