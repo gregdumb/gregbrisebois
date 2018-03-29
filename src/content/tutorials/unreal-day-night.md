@@ -44,4 +44,4 @@ Play around with the other settings; if the clouds/sun/moon/stars/etc are too br
 
 Free for commercial and non-commercial use. A mention in your credits would be nice but is not required. Let me know if this was useful to you!
 
-This post was rehosted from my old blog.
+*This post was rehosted from my old blog.*
