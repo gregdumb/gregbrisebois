@@ -25,7 +25,7 @@ const PostLink = ({ node }) => (
 			<div css={{
 				boxSizing: 'border-box',
 				padding: '1em',
-				width: '60%',
+				width: (node.frontmatter.thumbnail ? '60%' : '100%'),
 				[media.lessThan('small')]: {
 					width: '100%',
 				}
