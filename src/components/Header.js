@@ -42,7 +42,7 @@ const HeaderLink = ({ text, path, onClick }) => (
 
 const DropDown = ({ children, visible }) => (
 	<div css={{
-		display: visible ? 'flex' : 'none',
+		//display: visible ? 'flex' : 'none',
 		flexDirection: 'column',
 		position: 'absolute',
 		right: '0',
@@ -50,6 +50,12 @@ const DropDown = ({ children, visible }) => (
 		background: colors.veryDark,
 		width: 200,
 		zIndex: 4,
+		overflow: 'hidden',
+		transformOrigin: 'top',
+		transform: `scaleY(${visible ? 1 : 0})`,
+		//height: visible ? 200 : 0,
+		//opacity: visible ? 1 : 0,
+		transition: 'all 0.1s ease-in-out',
 	}} >
 		{children}
 	</div>
@@ -133,15 +139,17 @@ const Header = ({ headerTitle, toggleDropDown, closeDropDown, dropDownVisible })
 				<HeaderLink text="About" path="/about/" onClick={toggleDropDown} />
 			</DropDown>
 			<div onClick={closeDropDown} css={{
-				display: dropDownVisible ? 'block' : 'none',
+				//display: dropDownVisible ? 'block' : 'none',
 				background: 'black',
-				opacity: 0.5,
+				opacity: dropDownVisible ? 0.5 : 0,
 				zIndex: 3,
 				position: 'fixed',
 				top: 0,
 				bottom: 0,
 				left: 0,
 				right: 0,
+				transition: 'all 0.1s ease-in-out',
+				pointerEvents: dropDownVisible ? 'auto' : 'none',
 			}} />
 		</Container>
 	</header>
