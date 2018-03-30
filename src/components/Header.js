@@ -49,12 +49,13 @@ const DropDown = ({ children, visible }) => (
 		top: sizes.header.small,
 		background: colors.veryDark,
 		width: 200,
+		zIndex: 4,
 	}} >
 		{children}
 	</div>
 )
 
-const Header = ({ headerTitle, toggleDropDown, dropDownVisible }) => (
+const Header = ({ headerTitle, toggleDropDown, closeDropDown, dropDownVisible }) => (
 	<header css={{
 		background: colors.veryDark,
 		color: colors.veryDarkText,
@@ -117,6 +118,7 @@ const Header = ({ headerTitle, toggleDropDown, dropDownVisible }) => (
 					display: 'none',
 					color: colors.veryDarkText,
 					marginLeft: 'auto',
+					zIndex: 4,
 					[media.lessThan('small')]: {
 						display: 'block',
 					}
@@ -130,6 +132,17 @@ const Header = ({ headerTitle, toggleDropDown, dropDownVisible }) => (
 				<HeaderLink text="Tutorials" path="/tutorials/" onClick={toggleDropDown} />
 				<HeaderLink text="About" path="/about/" onClick={toggleDropDown} />
 			</DropDown>
+			<div onClick={closeDropDown} css={{
+				display: dropDownVisible ? 'block' : 'none',
+				background: 'black',
+				opacity: 0.5,
+				zIndex: 3,
+				position: 'fixed',
+				top: 0,
+				bottom: 0,
+				left: 0,
+				right: 0,
+			}} />
 		</Container>
 	</header>
 )

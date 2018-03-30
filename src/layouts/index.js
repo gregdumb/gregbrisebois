@@ -40,6 +40,12 @@ class TemplateWrapper extends React.Component {
 			dropDownVisible: !this.state.dropDownVisible,
 		})
 	}
+	
+	closeDropDown = () => {
+		this.setState({
+			dropDownVisible: false,
+		})
+	}
 
 	render() {
 		let {data, children} = this.props;
@@ -58,6 +64,7 @@ class TemplateWrapper extends React.Component {
 				<Header
 					headerTitle={data.site.siteMetadata.title}
 					toggleDropDown={this.toggleDropDown}
+					closeDropDown={this.closeDropDown}
 					dropDownVisible={this.state.dropDownVisible}
 				/>
 				<div
