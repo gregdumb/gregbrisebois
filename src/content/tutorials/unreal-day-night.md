@@ -5,7 +5,7 @@ tags: ["unreal engine", "game dev", "download"]
 thumbnail: ""
 ---
 
-Download: 
+## [Download Blueprint](https://apps.gregbrisebois.com/downloads/TimeOfDay_1.4.zip)
 
 This blueprint allows you to quickly implement a dynamic day/night cycle in your game. The assets are based off of the default UE4 assets but have been modified to be more dynamic. Supported features are:
 
