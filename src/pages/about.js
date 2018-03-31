@@ -40,6 +40,12 @@ const Skill = ({ name, image, padding }) => (
 const About = () => (
     <PageContent>
         <h1>About me</h1>
+		<h2>
+			<a href="https://apps.gregbrisebois.com/downloads/gregbriseboisresume.pdf" >
+				<i className="fas fa-file-pdf" css={{paddingRight: '0.5em'}} />
+				Resume
+			</a>
+		</h2>
         <h2>Skills</h2>
         <SkillGroup name={"Languages"} >
             <Skill name="Javascript" image={'/img/logos/js-logo.jpg'} />
