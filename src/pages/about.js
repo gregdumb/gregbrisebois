@@ -48,11 +48,17 @@ const About = () => (
             <Skill name="Java" image={'/img/logos/java-logo.jpg'} padding={'5%'} />
             <Skill name="Python" image={'/img/logos/python-logo.svg'} padding={'10%'} />
         </SkillGroup>
-        <SkillGroup name={"Web (Frontend)"} >
+        <SkillGroup name={"Frontend"} >
             <Skill name="React" image={'/img/logos/react-logo.jpg'} />
             <Skill name="Gatsby" image={'/img/logos/gatsby-logo.jpg'} padding={'10%'} />
             <Skill name="jQuery" image={'/img/logos/jquery-logo.jpg'} padding={'10%'} />
         </SkillGroup>
+		<SkillGroup name={"Server/Backend"} >
+			<Skill name="Node.js" image={'/img/logos/node-logo.jpg'} padding={'5%'} />
+			<Skill name="Apache" image={'/img/logos/apache-logo.jpg'} padding={'10%'} />
+			<Skill name="NGINX" image={'/img/logos/nginx-logo.jpg'} padding={'5%'} />
+			<Skill name="Ubuntu Server" image={'/img/logos/ubuntu-logo.jpg'} padding={'10%'} />
+		</SkillGroup>
         <SkillGroup name={"Game Development"} >
             <Skill name="Unreal Engine" image={'/img/logos/unreal-logo.jpg'} padding={'10%'} />
             <Skill name="Blender" image={'/img/logos/blender-logo.jpg'} padding={'10%'} />
