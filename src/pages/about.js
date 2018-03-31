@@ -41,7 +41,7 @@ const About = () => (
     <PageContent>
         <h1>About me</h1>
 		<h2>
-			<a href="https://apps.gregbrisebois.com/downloads/gregbriseboisresume.pdf" >
+			<a href="https://apps.gregbrisebois.com/downloads/gregbriseboisresume.pdf" target="_blank" >
 				<i className="fas fa-file-pdf" css={{paddingRight: '0.5em'}} />
 				Resume
 			</a>
