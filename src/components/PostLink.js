@@ -30,27 +30,15 @@ const PostLink = ({ node }) => (
 					width: '100%',
 				}
 			}} >
-				<h2>{node.frontmatter.title}</h2>
+				<h2 css={{marginTop: 0}} >{node.frontmatter.title}</h2>
 				<span css={{
 					textDecoration: 'none',
 					':hover': {textDecoration: 'none'}
 				}} >
-					<p css={{color: 'lightgrey'}} >Tags: {(node.frontmatter.tags || []).map(tag => (
-						<span>
-							<span css={{
-								':hover': {
-									color: 'white',
-									background: 'salmon',
-									borderRadius: '0.3em',
-									padding: '0.1em 0.25em',
-								}
-							}} >
-								{tag}
-							</span>
-							{', '}
-						</span>
-					))}</p>
-					<p>{node.excerpt}</p>
+					<p>{node.frontmatter.date}</p>
+					<p>
+						{node.excerpt}
+					</p>
 				</span>
 			</div>
 			<div css={{
