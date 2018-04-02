@@ -1,5 +1,6 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
+const _ = require('lodash')
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 	const { createNodeField } = boundActionCreators;
@@ -25,13 +26,19 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 };
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
-	const { createPage } = boundActionCreators
+
+	const { createPage } = boundActionCreators;
+	const tagTemplate = path.resolve("./src/templates/tags.js");
+
 	return new Promise((resolve, reject) => {
 		graphql(`
 		{
 		  	allMarkdownRemark {
 				edges {
 			  		node {
+						frontmatter {
+							tags
+						}
 						fields {
 				  			slug
 						}
@@ -41,7 +48,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 		}
 	  	`)
 	  	.then(result => {
-			result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+
+			const posts = result.data.allMarkdownRemark.edges;
+
+			posts.forEach(({ node }) => {
 				createPage({
 					path: node.fields.slug,
 					component: path.resolve('./src/templates/project.js'),
@@ -51,6 +61,29 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 					},
 				})
 			})
+
+			// Tag pages:
+			let tags = [];
+			// Iterate through each post, putting all found tags into `tags`
+			_.each(posts, edge => {
+				if (_.get(edge, "node.frontmatter.tags")) {
+					tags = tags.concat(edge.node.frontmatter.tags);
+				}
+			});
+			// Eliminate duplicate tags
+			tags = _.uniq(tags);
+
+			// Make tag pages
+			tags.forEach(tag => {
+				createPage({
+					path: `/tags/${_.kebabCase(tag)}/`,
+					component: tagTemplate,
+					context: {
+						tag,
+					},
+				});
+			});
+
 			resolve();
 		})
 	})
