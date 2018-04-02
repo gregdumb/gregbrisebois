@@ -1,22 +1,23 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const Tags = ({ tags }) => (
-    <p css={{color: 'lightgrey'}} >Tags: {(node.frontmatter.tags || []).map(tag => (
+const Tags = ({ tags, css }) => (
+    <span css={{color: 'grey', float: 'right'}} >{(tags || []).map(tag => (
         <span>
-            <span css={{
+            <Link css={{
                 ':hover': {
                     color: 'white',
                     background: 'salmon',
                     borderRadius: '0.3em',
                     padding: '0.1em 0.25em',
+                    textDecoration: 'none',
                 }
             }} >
                 {tag}
-            </span>
+            </Link>
             {', '}
         </span>
-    ))}</p>
+    ))}</span>
 )
 
 export default Tags;
