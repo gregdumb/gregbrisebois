@@ -12,7 +12,7 @@ const intersperse = (arr, sep) => {
 }
 
 const Tags = ({ tags, css }) => (
-    <span css={{color: 'grey', float: 'right'}} >
+    <span css={{color: 'grey'}} >
         {intersperse((tags || []).map(tag => (
             <span>
                 <Link to={`/tags/${_.kebabCase(tag)}`} css={{
