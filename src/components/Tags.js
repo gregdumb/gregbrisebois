@@ -4,9 +4,7 @@ import _ from 'lodash'
 
 // Thanks to Sophie Alpert from KhanAcademy
 const intersperse = (arr, sep) => {
-    if (arr.length === 0) {
-        return [];
-    }
+    if (arr.length === 0) { return [] }
 
     return arr.slice(1).reduce(function(xs, x, i) {
         return xs.concat([sep, x]);
@@ -14,7 +12,7 @@ const intersperse = (arr, sep) => {
 }
 
 const Tags = ({ tags, css }) => (
-    <span css={{color: 'grey', float: 'right'}} >
+    <span css={{color: 'grey'}} >
         {intersperse((tags || []).map(tag => (
             <span>
                 <Link to={`/tags/${_.kebabCase(tag)}`} css={{
