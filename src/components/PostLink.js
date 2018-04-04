@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { media } from '../theme'
+import { styles, media } from '../theme'
 
 const PostLink = ({ node }) => (
 	<Link to={node.fields.slug} css={{
@@ -16,7 +16,7 @@ const PostLink = ({ node }) => (
 			display: 'flex',
 			marginBottom: '1rem',
 			border: '1px solid lightgrey',
-			transition: 'all 0.1s ease-in-out', // Needs to be globalized, same thing is in BoxLink
+			...styles.animated,
 			':hover': {transform: 'scale(1.05)'},
 			[media.lessThan('small')]: {
 				flexDirection: 'column',
