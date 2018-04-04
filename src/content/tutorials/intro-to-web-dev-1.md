@@ -1,6 +1,7 @@
 ---
 title: Introduction to Web Development (Part 1)
 date: "2018-03-21"
+tags: ["web", "html", "tutorial"]
 ---
 
 ## The web is complicated
