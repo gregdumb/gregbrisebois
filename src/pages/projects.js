@@ -3,9 +3,14 @@ import Link from 'gatsby-link'
 import PageContent from '../components/PageContent'
 import PostLink from '../components/PostLink'
 
+//sort: {fields: [frontmatter___date], order: DESC}
+
 export const query = graphql`
 	query ProjectsQuery {
-		allMarkdownRemark(filter: {fields: {folder: {eq: "projects"}}}) {
+		allMarkdownRemark(
+			filter: {fields: {folder: {eq: "projects"}}}
+			sort: {fields: [frontmatter___date], order: DESC}
+		) {
 			edges {
 			  	node {
 					frontmatter {

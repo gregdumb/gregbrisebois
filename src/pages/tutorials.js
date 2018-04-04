@@ -5,7 +5,10 @@ import PostLink from '../components/PostLink'
 
 export const query = graphql`
 	query TutorialsQuery {
-		allMarkdownRemark(filter: {fields: {folder: {eq: "tutorials"}}}) {
+		allMarkdownRemark(
+			filter: {fields: {folder: {eq: "tutorials"}}}
+			sort: {fields: [frontmatter___date], order: DESC}
+		) {
 			edges {
 			  	node {
 					frontmatter {
