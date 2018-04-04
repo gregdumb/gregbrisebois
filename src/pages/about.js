@@ -18,7 +18,7 @@ const SkillGroup = ({ children, name }) => (
 
 const Skill = ({ name, image, padding }) => (
     <div css={{
-        width: '8em',
+        //width: '8em',
         marginRight: '1em',
         marginBottom: '1em',
         //border: '1px solid lightgrey',
@@ -26,7 +26,8 @@ const Skill = ({ name, image, padding }) => (
         textAlign: 'center',
     }} >
         <img src={image} css={{
-            width: '100%',
+            width: '8em',
+            height: '8em',
             padding: (padding || 0),
             boxSizing: 'border-box',
         }} />
@@ -46,6 +47,13 @@ const About = () => (
 				Resume
 			</a>
 		</h2>
+        <h2>Experience</h2>
+        <ul>
+            <li>
+                <h3>Analog Devices</h3>
+                <p>Software Intern</p>
+            </li>
+        </ul>
         <h2>Skills</h2>
         <SkillGroup name={"Languages"} >
             <Skill name="Javascript" image={'/img/logos/js-logo.jpg'} />
@@ -69,6 +77,8 @@ const About = () => (
             <Skill name="Unreal Engine" image={'/img/logos/unreal-logo.jpg'} padding={'10%'} />
             <Skill name="Blender" image={'/img/logos/blender-logo.jpg'} padding={'10%'} />
         </SkillGroup>
+        <h2>About the Site</h2>
+        <p>This site was built with React and Gatsby</p>
     </PageContent>
 )
 
