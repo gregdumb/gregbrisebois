@@ -25,6 +25,32 @@ const sizes = {
 	}
 }
 
+const styleConstants = {
+	shadow: '0px 0px 10px 0px rgba(179,179,179,1)',
+	transition: 'all 0.1s ease-in-out',
+	hoverScale: 'scale(1.1)',
+}
+
+const styles = {
+	shadow: {
+		boxShadow: styleConstants.shadow,
+	},
+	hoverShadow: {
+		':hover': {
+			boxShadow: styleConstants.shadow,
+		}
+	},
+	animated: {
+		transition: styleConstants.transition,
+	},
+	hoverScale: {
+		transition: styleConstants.transition,
+		':hover': {
+			transform: styleConstants.hoverScale,
+		}
+	}
+}
+
 const SIZES = {
 	xsmall: {min: 0, max: 599},
 	small: {min: 600, max: 779},
@@ -78,4 +104,4 @@ const media = {
 	},
   };
 
-export { colors, sizes, media };
+export { colors, styles, sizes, media };

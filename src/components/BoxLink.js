@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { colors, media } from '../theme'
+import { colors, styles, media } from '../theme'
 
 const BoxLink = ({ icon, text, to }) => (
 	<Link to={to} css={{
@@ -11,7 +11,7 @@ const BoxLink = ({ icon, text, to }) => (
 		textAlign: 'center',
 		color: colors.secondaryHighlightText,
 		backgroundColor: colors.secondaryHighlight,
-		transition: 'all 0.1s ease-in-out',
+		...styles.animated,
 		':hover': {
 			textDecoration: 'none',
 			transform: 'scale(1.1)',

@@ -1,5 +1,6 @@
 import React from 'react'
 import PageContent from '../components/PageContent'
+import { styles } from '../theme'
 
 const SkillGroup = ({ children, name }) => (
     <div css={{
@@ -22,8 +23,8 @@ const Skill = ({ name, image, padding }) => (
         marginRight: '1em',
         marginBottom: '1em',
         //border: '1px solid lightgrey',
-        boxShadow: '0px 0px 10px 0px rgba(179,179,179,1)',
         textAlign: 'center',
+        ...styles.shadow,
     }} >
         <img src={image} css={{
             width: '8em',
