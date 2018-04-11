@@ -65,8 +65,10 @@ const About = () => (
         </SkillGroup>
         <SkillGroup name={"Frontend"} >
             <Skill name="React" image={'/img/logos/react-logo.jpg'} />
+            <Skill name="Redux" image={'/img/logos/redux-logo.jpg'} padding={'10%'} />
             <Skill name="Gatsby" image={'/img/logos/gatsby-logo.jpg'} padding={'10%'} />
             <Skill name="jQuery" image={'/img/logos/jquery-logo.jpg'} padding={'10%'} />
+            <Skill name="Android" image={'/img/logos/android-logo.jpg'} padding={'10%'} />
         </SkillGroup>
 		<SkillGroup name={"Server/Backend"} >
 			<Skill name="Node.js" image={'/img/logos/node-logo.jpg'} padding={'5%'} />
