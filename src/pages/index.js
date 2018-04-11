@@ -12,6 +12,11 @@ const IndexPage = () => (
 			color: 'white',
 			height: '300px',
 			boxSizing: 'border-box',
+			display: 'flex',
+			alignItems: 'center',
+			[media.lessThan('medium')]: {
+				alignItems: 'baseline',
+			}
 			}} >
 			<Container>
 				<h1 css={{textAlign: 'left', fontSize: '4rem'}} >
