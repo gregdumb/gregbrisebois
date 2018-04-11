@@ -3,14 +3,18 @@ import { css } from 'glamor'
 import Container from '../components/Container'
 import Tags from '../components/Tags'
 import { media } from '../theme'
+import styled from 'styled-components'
 
 css.global('img', {
 	maxWidth: '100%',
 })
 
+const Markdown = styled.section`
+	line-height: 1.75em;
+`;
+
 const MarkdownBody = ({ markdownRemark }) => (
 	<div >
-		
 		<div css={{
 			display: 'flex',
 			justifyContent: 'space-between',
@@ -22,7 +26,9 @@ const MarkdownBody = ({ markdownRemark }) => (
 			<Tags tags={markdownRemark.frontmatter.tags} />
 		</div>
 		<h1>{markdownRemark.frontmatter.title}</h1>
-		<div dangerouslySetInnerHTML={{__html: markdownRemark.html}} />
+		<Markdown>
+			<div dangerouslySetInnerHTML={{__html: markdownRemark.html}} />
+		</Markdown>
 	</div>
 )
 
