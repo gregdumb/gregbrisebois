@@ -5,12 +5,12 @@ import Tags from '../components/Tags'
 import { media } from '../theme'
 import styled from 'styled-components'
 
-css.global('img', {
-	maxWidth: '100%',
-})
-
 const Markdown = styled.section`
 	line-height: 1.75em;
+
+	img {
+		max-width: 100%;
+	}
 `;
 
 const MarkdownBody = ({ markdownRemark }) => (
