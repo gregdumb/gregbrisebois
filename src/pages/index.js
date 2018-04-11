@@ -8,20 +8,21 @@ import { colors, media } from '../theme'
 const IndexPage = () => (
 	<div>
 		<header css={{
-			paddingTop: '5rem',
-			paddingBottom: '5rem',
 			background: 'cornflowerblue',
 			color: 'white',
-			height: '200px',
+			height: '300px',
+			boxSizing: 'border-box',
 			}} >
 			<Container>
-				<h1 css={{textAlign: 'center', fontSize: '4rem'}} >
+				<h1 css={{textAlign: 'left', fontSize: '4rem'}} >
+					{"> "}
 					<Typer options={{
 						strings: [
-							'I develop websites',
-							'I develop backends',
-							'I develop games',
+							'I write websites',
+							'I write backends',
+							'I write games',
 							'I write tutorials',
+							'I write code',
 						],
 						typeSpeed: 70,
 						backSpeed: 70,
