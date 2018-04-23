@@ -51,8 +51,14 @@ const About = () => (
         <h2>Experience</h2>
         <ul>
             <li>
-                <h3>Analog Devices</h3>
-                <p>Software Intern</p>
+                <h3>Analog Devices Inc.</h3>
+                <p style={{margin: '0.5em 0'}} >July 2017 - Present</p>
+                <p style={{margin: '0.5em 0'}} >Software Intern, multiple projects including:</p>
+                <ul>
+                    <li>Web-based design aid tools for specific parts</li>
+                    <li>Linduino (Arduino) driver development for ADI parts</li>
+                    <li>Desktop .NET plugins for the ACE testing platform</li>
+                </ul>
             </li>
         </ul>
         <h2>Skills</h2>
@@ -70,10 +76,16 @@ const About = () => (
             <Skill name="jQuery" image={'/img/logos/jquery-logo.jpg'} padding={'10%'} />
             <Skill name="Android" image={'/img/logos/android-logo.jpg'} padding={'10%'} />
         </SkillGroup>
-		<SkillGroup name={"Server/Backend"} >
+        <SkillGroup name={"Server Frameworks/Libraries"} >
+            <Skill name="Express" image={'/img/logos/express-logo.jpg'} padding={'5%'} />
+            <Skill name="Sequelize" image={'/img/logos/sequelize-logo.jpg'} padding={'5%'} />
+            <Skill name="Socket.io" image={'/img/logos/socket-logo.jpg'} padding={'0'} />
+        </SkillGroup>
+		<SkillGroup name={"Server Technologies"} >
 			<Skill name="Node.js" image={'/img/logos/node-logo.jpg'} padding={'5%'} />
 			<Skill name="Apache" image={'/img/logos/apache-logo.jpg'} padding={'10%'} />
 			<Skill name="NGINX" image={'/img/logos/nginx-logo.jpg'} padding={'5%'} />
+            <Skill name="MySQL" image={'/img/logos/mysql-logo.jpg'} padding={'10%'} />
 			<Skill name="Ubuntu Server" image={'/img/logos/ubuntu-logo.jpg'} padding={'10%'} />
 		</SkillGroup>
         <SkillGroup name={"Game Development"} >
