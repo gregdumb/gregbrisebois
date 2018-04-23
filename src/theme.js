@@ -14,7 +14,7 @@ const colors = {
 	primaryHighlight: 'cornflowerblue',
 	primaryHighlightText: 'white',
 	
-	secondaryHighlight: '#95BA3C',
+	secondaryHighlight: '#ed9d64',
 	secondaryHighlightText: 'white',
 }
 
