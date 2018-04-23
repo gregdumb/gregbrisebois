@@ -45,6 +45,7 @@ const PostLink = ({ node }) => (
 				display: (node.frontmatter.thumbnail) ? 'block' : 'none',
 				overflow: 'hidden',
 				background: `url(${node.frontmatter.thumbnail}) center no-repeat`,
+				backgroundSize: 'cover',
 				width: '40%',
 				[media.lessThan('small')]: {
 					width: '100%',
