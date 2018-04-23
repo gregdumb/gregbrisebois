@@ -25,7 +25,7 @@ const MarkdownBody = ({ markdownRemark }) => (
 			{markdownRemark.frontmatter.date}
 			<Tags tags={markdownRemark.frontmatter.tags} />
 		</div>
-		<h1>{markdownRemark.frontmatter.title}</h1>
+		<h1 css={{fontSize: '2.25em'}} >{markdownRemark.frontmatter.title}</h1>
 		<Markdown>
 			<div dangerouslySetInnerHTML={{__html: markdownRemark.html}} />
 		</Markdown>
