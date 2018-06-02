@@ -13,7 +13,6 @@ require("prismjs/themes/prism-tomorrow.css")
 import './index.css'
 import './hamburgers.css'
 
-
 require('./fontawesome-all')
 
 export const query = graphql`
