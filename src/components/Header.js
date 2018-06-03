@@ -13,65 +13,10 @@ import { colors, sizes, media } from '../theme'
 import Container from './Container'
 import Hamburger from './Hamburger'
 
-const HeaderLink = ({ text, path, onClick }) => (
-	<Link
-		to={path}
-		onClick={onClick}
-		css={{
-			height: '100%',
-			color: 'white',
-			textDecoration: 'none',
-			fontSize: '20px',
-			[media.lessThan('large')]: {
-				fontSize: '16px',
-			},
-			':hover': {
-				textDecoration: 'none',
-			}
-		}} >
-		<div css={{
-			display: 'flex',
-			alignItems: 'center',
-			height: '100%',
-			padding: '0 0.5em',
-			[media.lessThan('small')]: {
-				// For mobile dropdown
-				height: '3em',
-				fontSize: '1em',
-			},
-			':hover': {
-				backgroundColor: colors.veryDarkHover,
-			}
-		}} >
-			{text}
-		</div>
-	</Link>
-)
-
-const DropDown = ({ children, visible }) => (
-	<div css={{
-		//display: visible ? 'flex' : 'none',
-		flexDirection: 'column',
-		position: 'absolute',
-		right: '0',
-		top: sizes.header.small,
-		background: colors.veryDark,
-		width: 200,
-		zIndex: 4,
-		overflow: 'hidden',
-		transformOrigin: 'top',
-		transform: `scaleY(${visible ? 1 : 0})`,
-		//height: visible ? 200 : 0,
-		//opacity: visible ? 1 : 0,
-		transition: 'all 0.1s ease-in-out',
-	}} >
-		{children}
-	</div>
-)
-
-const styles = {
+const styles = theme => ({
 	root: {
 		flexGrow: 1,
+		zIndex: theme.zIndex.drawer + 1,
 	},
 	title: {
 		flex: 1,
@@ -79,14 +24,17 @@ const styles = {
 	menuButton: {
 		marginLeft: -12,
 		marginRight: 20,
+		[theme.breakpoints.up('md')]: {
+			display: 'none',
+		},
 	}
-}
+})
 
-const Header = ({ classes, headerTitle, toggleDropDown, closeDropDown, dropDownVisible }) => (
+const Header = ({ classes, headerTitle, toggleDropDown, closeDropDown, dropDownVisible, openDrawerClicked }) => (
 	<header className={classes.root} >
-		<AppBar position="static" color="default" >
+		<AppBar position="fixed" >
 			<Toolbar>
-				<IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+				<IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={openDrawerClicked} >
 					<MenuIcon />
 				</IconButton>
 				<Typography className={classes.title} variant="title" color="inherit" >

@@ -6,12 +6,16 @@ import { sizes, media } from '../theme'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import MenuDrawer from '../components/MenuDrawer'
 
 require('typeface-bitter')
 require('typeface-open-sans')
 require("prismjs/themes/prism-tomorrow.css")
 import './index.css'
 import './hamburgers.css'
+
+import { withStyles } from '@material-ui/core';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 require('./fontawesome-all')
 
@@ -25,60 +29,84 @@ export const query = graphql`
 	}
 `;
 
+const muiTheme = createMuiTheme({
+	palette: {
+		primary: {
+			light: '#819ca9',
+			main: '#546e7a',
+			dark: '#29434e',
+			contrastText: '#ffffff',
+		},
+	}
+})
+
+const styles = theme => ({
+	root: {
+		display: 'flex',
+		alignItems: 'stretch',
+		minHeight: '100vh',
+		width: '100%',
+	},
+	toolbar: theme.mixins.toolbar,
+	grow: {
+		flex: '1 1 auto',
+	},
+	content: {
+		paddingTop: 80,
+		flex: '1 1 100%',
+		maxWidth: '100%',
+		margin: '0 auto',
+	}
+})
+
 class TemplateWrapper extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			dropDownVisible: false
+			menuOpen: false,
 		}
 	}
 	
-	toggleDropDown = () => {
+	onDrawerClose = () => {
 		this.setState({
-			dropDownVisible: !this.state.dropDownVisible,
+			menuOpen: false,
 		})
 	}
 	
-	closeDropDown = () => {
+	openDrawer = () => {
 		this.setState({
-			dropDownVisible: false,
+			menuOpen: true,
 		})
 	}
 
 	render() {
-		let {data, children} = this.props;
+		let {data, children, classes} = this.props;
 
 		return(
-			<div css={{
-				
-			}} >
-				<Helmet
-					title={data.site.siteMetadata.title}
-					meta={[
-						{ name: 'description', content: 'Personal site of Greg Brisebois' },
-						{ name: 'keywords', content: 'greg brisebois, gregory brisebois, software, tutorials, profile' },
-					]}
-				/>
-				<Header
-					headerTitle={data.site.siteMetadata.title}
-					toggleDropDown={this.toggleDropDown}
-					closeDropDown={this.closeDropDown}
-					dropDownVisible={this.state.dropDownVisible}
-				/>
-				<div
-					css={{
-						marginTop: sizes.header.large,
-						minHeight: `calc(100vh - ${sizes.header.large})`,
-						[media.lessThan('large')]: {
-							marginTop: sizes.header.small,
-						}
-					}}
-				>
-					{children()}
+			<MuiThemeProvider theme={muiTheme} >
+				<div className={classes.root} >
+					<Helmet
+						title={data.site.siteMetadata.title}
+						meta={[
+							{ name: 'description', content: 'Personal site of Greg Brisebois' },
+							{ name: 'keywords', content: 'greg brisebois, gregory brisebois, software, tutorials, profile' },
+						]}
+					/>
+					<Header
+						headerTitle={data.site.siteMetadata.title}
+						toggleDropDown={this.toggleDropDown}
+						closeDropDown={this.closeDropDown}
+						dropDownVisible={this.state.dropDownVisible}
+						openDrawerClicked={this.openDrawer}
+					/>
+					<MenuDrawer className={classes.grow} isOpen={this.state.menuOpen} onClose={this.onDrawerClose} />
+					<div className={classes.content} >
+						{children()}
+					</div>
+					{/*<Footer />*/}
 				</div>
-				<Footer />
-			</div>
+			</MuiThemeProvider>
 		)
 	}
 }
@@ -88,4 +116,4 @@ TemplateWrapper.propTypes = {
 	data: PropTypes.object,
 }
 
-export default TemplateWrapper
+export default withStyles(styles)(TemplateWrapper);
