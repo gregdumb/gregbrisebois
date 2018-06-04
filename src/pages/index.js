@@ -5,7 +5,16 @@ import Typer from '../components/Typer'
 import BoxLink from '../components/BoxLink'
 import { colors, media } from '../theme'
 
-const IndexPage = () => (
+import { withStyles } from '@material-ui/core/styles'
+
+const styles = theme => ({
+	header: {
+		background: theme.palette.primary.light,
+		color: 'white',
+	}
+})
+
+const IndexPage = ({ classes }) => (
 	<div>
 		<header css={{
 			background: 'cornflowerblue',
@@ -17,7 +26,7 @@ const IndexPage = () => (
 			[media.lessThan('medium')]: {
 				alignItems: 'baseline',
 			}
-			}} >
+			}} className={classes.header} >
 			<Container>
 				<h1 css={{textAlign: 'left', fontSize: '4rem'}} >
 					{"> "}
@@ -57,4 +66,4 @@ const IndexPage = () => (
   	</div>
 )
 
-export default IndexPage;
+export default withStyles(styles)(IndexPage);
