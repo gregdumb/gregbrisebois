@@ -41,19 +41,17 @@ const styles = theme => ({
 		'& img': {
 			maxWidth: '100%',
 		}
+	},
+	metadata: {
+		display: 'flex',
+		justifyContent: 'space-between',
+		paddingTop: 16
 	}
 })
 
 const MarkdownBody = ({ classes, markdownRemark }) => (
 	<div >
-		<div css={{
-			display: 'flex',
-			justifyContent: 'space-between',
-			paddingTop: 16,
-			[media.lessThan('small')]: {
-				flexDirection: 'column',
-			}
-		}} >
+		<div className={classes.metadata} >
 			<Typography variant="subheading" >{markdownRemark.frontmatter.date}</Typography>
 			<Tags tags={markdownRemark.frontmatter.tags} />
 		</div>

@@ -1,14 +1,35 @@
 import React from 'react'
 import Typed from 'typed.js'
-import { css } from 'glamor'
+//import { css } from 'glamor'
 
-let typedjsBlink = css.keyframes({
+import { injectGlobal, keyframes } from 'styled-components';
+
+/*let typedjsBlink = css.keyframes({
 	'0%': {opacity: 1},
 	'50%': {opacity: 0},
 	'100%': {opacity: 1},
-});
+});*/
 
-css.global('.typed-cursor', {
+let blink = keyframes`
+	0% { opacity: 1; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
+`
+
+injectGlobal`
+	.typed-cursor: {
+		opacity: 1;
+		animation: ${blink} 0.7s infinite;
+	}
+	
+	.typed-fade-out: {
+		opacity: 0;
+		transition: opacity .25s;
+		animation: 0;
+	}
+`
+
+/*css.global('.typed-cursor', {
 	opacity: 1,
 	animation: `${typedjsBlink} 0.7s infinite`,
 });
@@ -17,7 +38,7 @@ css.global('.typed-fade-out', {
 	opacity: 0,
 	transition: 'opacity .25s',
 	animation: 0,
-});
+});*/
 
 class Typer extends React.Component {
 	componentDidMount() {

@@ -1,26 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { colors, media } from '../theme'
+import { withStyles } from '@material-ui/core'
 
-const Container = ({ children, narrow }) => (
-	<div css={{
+const styles = theme => ({
+	gutter: {
 		paddingLeft: 24,
 		paddingRight: 24,
 		marginLeft: 'auto',
 		marginRight: 'auto',
 		width: '100%',
 		boxSizing: 'border-box',
-		maxWidth: (narrow ? '800px' : '1000px'),
-		[media.lessThan('medium')]: {
+		[theme.breakpoints.down('sm')]: {
 			paddingLeft: 16,
 			paddingRight: 16,
 		}
-	}} >
+	}
+})
+
+const Container = ({ children, classes, narrow }) => (
+	<div className={classes.gutter} >
 		{children}
 	</div>
 )
 
-Container.propTypes = {
-}
-
-export default Container;
+export default withStyles(styles)(Container);

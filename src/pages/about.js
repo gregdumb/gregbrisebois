@@ -1,6 +1,5 @@
 import React from 'react'
 import PageContent from '../components/PageContent'
-import { styles } from '../theme'
 
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
@@ -28,28 +27,6 @@ const SkillGroup = ({ skills, name }) => (
 			))}
 		</Grid>
 	</div>
-)
-
-const Skill = ({ name, image, padding }) => (
-    <div css={{
-        //width: '8em',
-        marginRight: '1em',
-        marginBottom: '1em',
-        //border: '1px solid lightgrey',
-        textAlign: 'center',
-        ...styles.shadow,
-    }} >
-        <img src={image} css={{
-            width: '8em',
-            height: '8em',
-            padding: (padding || 0),
-            boxSizing: 'border-box',
-        }} />
-        <p css={{
-            marginTop: '0.25em',
-            marginBottom: '0.25em',
-        }} >{name}</p>
-    </div>
 )
 
 const skillGroups = [{

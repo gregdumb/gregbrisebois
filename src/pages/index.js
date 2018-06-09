@@ -13,24 +13,21 @@ const styles = theme => ({
 	header: {
 		background: theme.palette.primary.light,
 		color: 'white',
+		height: '300px',
+		boxSizing: 'border-box',
+		display: 'flex',
+		alignItems: 'center',
+		[theme.breakpoints.down('xs')]: {
+			alignItems: 'baseline'
+		}
 	},
 })
 
 const IndexPage = ({ classes }) => (
 	<div>
-		<header css={{
-			background: 'cornflowerblue',
-			color: 'white',
-			height: '300px',
-			boxSizing: 'border-box',
-			display: 'flex',
-			alignItems: 'center',
-			[media.lessThan('medium')]: {
-				alignItems: 'baseline',
-			}
-			}} className={classes.header} >
+		<header className={classes.header} >
 			<Container>
-				<h1 css={{textAlign: 'left', fontSize: '4rem'}} >
+				<h1 style={{textAlign: 'left', fontSize: '4rem'}} >
 					{"> "}
 					<Typer options={{
 						strings: [

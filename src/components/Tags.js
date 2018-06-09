@@ -27,24 +27,6 @@ const styles = theme => ({
 
 const Tags = ({ classes, tags, css }) => (
 	<div>
-    {/*<span css={{color: 'grey'}} >
-        {intersperse((tags || []).map(tag => (
-            <span>
-                <Link to={`/tags/${_.kebabCase(tag)}`} css={{
-                    ':hover': {
-                        color: 'white',
-                        background: 'salmon',
-                        borderRadius: '0.3em',
-                        padding: '0.1em 0.25em',
-                        textDecoration: 'none',
-                    }
-                }} >
-                    {tag}
-                </Link>
-            </span>
-        )), ', ')}
-	</span>*/}
-	
 		{tags && tags.map(tag => (
 			<UnstyledLink to={`/tags/${_.kebabCase(tag)}`} >
 				<Chip

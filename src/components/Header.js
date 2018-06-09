@@ -8,8 +8,6 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { withStyles } from '@material-ui/core/styles';
 
-import Link from 'gatsby-link'
-import { colors, sizes, media } from '../theme'
 import Container from './Container'
 
 const styles = theme => ({
