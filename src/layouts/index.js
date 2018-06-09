@@ -7,6 +7,7 @@ import { sizes, media } from '../theme'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import MenuDrawer from '../components/MenuDrawer'
+import PageArea from '../components/PageArea'
 
 require('typeface-bitter')
 require('typeface-open-sans')
@@ -101,9 +102,9 @@ class TemplateWrapper extends React.Component {
 						openDrawerClicked={this.openDrawer}
 					/>
 					<MenuDrawer className={classes.grow} isOpen={this.state.menuOpen} onClose={this.onDrawerClose} />
-					<div className={classes.content} >
+					<PageArea >
 						{children()}
-					</div>
+					</PageArea>
 					{/*<Footer />*/}
 				</div>
 			</MuiThemeProvider>
