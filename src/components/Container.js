@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core'
 
 const styles = theme => ({
 	gutter: {
+		maxWidth: 1000,
 		paddingLeft: 24,
 		paddingRight: 24,
 		marginLeft: 'auto',
