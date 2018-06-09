@@ -13,12 +13,9 @@ require('typeface-bitter')
 require('typeface-open-sans')
 require("prismjs/themes/prism-tomorrow.css")
 import './index.css'
-import './hamburgers.css'
 
 import { withStyles } from '@material-ui/core';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-
-require('./fontawesome-all')
 
 export const query = graphql`
 	query LayoutQuery {
@@ -29,17 +26,6 @@ export const query = graphql`
 		}
 	}
 `;
-
-const muiTheme = createMuiTheme({
-	palette: {
-		primary: {
-			light: '#819ca9',
-			main: '#546e7a',
-			dark: '#29434e',
-			contrastText: '#ffffff',
-		},
-	}
-})
 
 const styles = theme => ({
 	root: {

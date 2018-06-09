@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Container from '../components/Container'
 import PostLinkList from '../components/PostLinkList'
+import { Typography } from '@material-ui/core';
 
 //sort: {fields: [frontmatter___date], order: DESC}
 
@@ -32,7 +33,7 @@ export const query = graphql`
 
 const Projects = ({ data }) => (
 	<Container>
-		<h1>My Projects</h1>
+		<Typography variant="display1" gutterBottom >My Projects</Typography>
 		<PostLinkList nodes={data.allMarkdownRemark.edges.map(({node}) => node)} />
 	</Container>
 )

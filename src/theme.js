@@ -8,7 +8,7 @@ import { createMuiTheme } from '@material-ui/core/styles'
 const constants = {
 	headers: {
 		fontFamily: 'Bitter, serif',
-		color: 'black',
+		color: '#222',
 	}
 }
 
@@ -25,10 +25,29 @@ const theme = createMuiTheme({
 	typography: {
 		fontSize: 16,
 		
-		display1: { ...constants.headers },
-		display2: { ...constants.headers },
-		display3: { ...constants.headers },
-		display4: { ...constants.headers },
+		display4: {
+			...constants.headers,
+			fontSize: '4rem',
+		},
+		
+		display3: {
+			...constants.headers,
+			fontSize: '3.5rem',
+		},
+		
+		display2: {
+			...constants.headers,
+			fontSize: '3rem',
+		},
+		
+		display1: {
+			...constants.headers,
+		},
+		
+		headline: {
+			...constants.headers,
+		},
+		
 		title: { ...constants.headers },
 	}
 });

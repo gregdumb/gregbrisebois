@@ -11,7 +11,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Link from 'gatsby-link'
 import { colors, sizes, media } from '../theme'
 import Container from './Container'
-import Hamburger from './Hamburger'
 
 const styles = theme => ({
 	root: {
@@ -24,7 +23,7 @@ const styles = theme => ({
 	menuButton: {
 		marginLeft: -12,
 		marginRight: 20,
-		[theme.breakpoints.up('md')]: {
+		[theme.breakpoints.up('lg')]: {
 			display: 'none',
 		},
 	}

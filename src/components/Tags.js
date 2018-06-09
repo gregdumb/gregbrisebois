@@ -45,7 +45,7 @@ const Tags = ({ classes, tags, css }) => (
         )), ', ')}
 	</span>*/}
 	
-		{tags.map(tag => (
+		{tags && tags.map(tag => (
 			<UnstyledLink to={`/tags/${_.kebabCase(tag)}`} >
 				<Chip
 					className={classes.chip}

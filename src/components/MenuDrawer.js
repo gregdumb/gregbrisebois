@@ -98,7 +98,7 @@ const drawerContent = (c) => (
 
 const MenuDrawer = ({ classes, isOpen, onClose }) => (
 	<span>
-		<Hidden smDown implementation='css' >
+		<Hidden mdDown implementation='css' >
 			<div className={classes.root} >
 				<div className={classes.fixed} >
 					<Drawer variant='permanent' open classes={{ paper: classes.drawerPaper }} >
@@ -108,7 +108,7 @@ const MenuDrawer = ({ classes, isOpen, onClose }) => (
 				</div>
 			</div>
 		</Hidden>
-		<Hidden mdUp >
+		<Hidden lgUp >
 			<Drawer
 				variant='temporary'
 				anchor='left'

@@ -19,19 +19,19 @@ const Markdown = styled.section`
 const styles = theme => ({
 	md: {
 		'& h1': {
-			...theme.typography.display2,
+			...theme.typography.display3,
 		},
 		'& h2': {
-			...theme.typography.display1,
+			...theme.typography.display2,
 		},
 		'& h3': {
-			...theme.typography.headline,
+			...theme.typography.display1,
 		},
 		'& h4': {
-			...theme.typography.title,
+			...theme.typography.headline,
 		},
 		'& h5': {
-			...theme.typography.subheading,
+			...theme.typography.title,
 		},
 		
 		'& p': {
@@ -49,14 +49,15 @@ const MarkdownBody = ({ classes, markdownRemark }) => (
 		<div css={{
 			display: 'flex',
 			justifyContent: 'space-between',
+			paddingTop: 16,
 			[media.lessThan('small')]: {
 				flexDirection: 'column',
 			}
 		}} >
-			{markdownRemark.frontmatter.date}
+			<Typography variant="subheading" >{markdownRemark.frontmatter.date}</Typography>
 			<Tags tags={markdownRemark.frontmatter.tags} />
 		</div>
-		<Typography variant="display3" gutterBottom >{markdownRemark.frontmatter.title}</Typography>
+		<Typography variant="display4" gutterBottom >{markdownRemark.frontmatter.title}</Typography>
 		
 		<div className={classes.md} dangerouslySetInnerHTML={{__html: markdownRemark.html}} />
 		

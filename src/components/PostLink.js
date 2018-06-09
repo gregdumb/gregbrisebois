@@ -78,7 +78,7 @@ const PostLink = ({ classes, node }) => (
 			<CardMedia image={node.frontmatter.thumbnail} />
 			<CardContent >
 				<Typography variant="title" gutterBottom >{node.frontmatter.title}</Typography>
-				<Typography variant="subheading">{node.excerpt}</Typography>
+				<Typography variant="body1">{node.excerpt}</Typography>
 			</CardContent>
 		</Card>
 	</UnstyledLink>
