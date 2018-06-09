@@ -50,7 +50,7 @@ const styles = theme => ({
 		//},
 	},
 	closeButton: {
-		marginLeft: 12,
+		marginLeft: 6,
 	},
 	content: {
 		flexGrow: 1,
