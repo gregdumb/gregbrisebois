@@ -53,11 +53,11 @@ class TemplateWrapper extends React.Component {
 		let metaTags = [
 			{ name: 'description', content: 'Personal site of Greg Brisebois' },
 			{ name: 'keywords', content: 'greg brisebois, gregory brisebois, software, tutorials, profile' },
-			{ name: 'branch', content: process.env.BRANCH },
-			{ name: 'head', content: process.env.HEAD },
+			//{ name: 'branch', content: process.env.BRANCH },
+			//{ name: 'head', content: process.env.HEAD },
 		];
 		
-		if(process.env.BRANCH !== 'master') metaTags.push({ name: 'robots', content: 'noindex' });
+		//if(process.env.BRANCH !== 'master') metaTags.push({ name: 'robots', content: 'noindex' });
 		
 		return(
 			<div css={{
