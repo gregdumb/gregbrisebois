@@ -49,17 +49,21 @@ class TemplateWrapper extends React.Component {
 
 	render() {
 		let {data, children} = this.props;
-
+		
+		let metaTags = [
+			{ name: 'description', content: 'Personal site of Greg Brisebois' },
+			{ name: 'keywords', content: 'greg brisebois, gregory brisebois, software, tutorials, profile' },
+		];
+		
+		if(process.env.BRANCH !== 'master') metaTags.push({ name: 'robots', content: 'noindex' });
+		
 		return(
 			<div css={{
 				
 			}} >
 				<Helmet
 					title={data.site.siteMetadata.title}
-					meta={[
-						{ name: 'description', content: 'Personal site of Greg Brisebois' },
-						{ name: 'keywords', content: 'greg brisebois, gregory brisebois, software, tutorials, profile' },
-					]}
+					meta={metaTags}
 				/>
 				<Header
 					headerTitle={data.site.siteMetadata.title}
