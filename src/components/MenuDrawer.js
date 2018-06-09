@@ -59,6 +59,24 @@ const styles = theme => ({
 	},
 });
 
+const links = [{
+	name: "Home",
+	to: '/',
+	icon: <HomeIcon />,
+}, {
+	name: "Tutorials",
+	to: '/tutorials',
+	icon: <HelpIcon />,
+}, {
+	name: "Projects",
+	to: '/projects',
+	icon: <CodeIcon />,
+}, {
+	name: "About",
+	to: '/about',
+	icon: <AccountCircleIcon />,
+}];
+
 const DrawerLink = ({ name, to, icon, onClick }) => (
 	<UnstyledLink to={to} >
 		<ListItem button onClick={onClick} >
@@ -72,10 +90,9 @@ const DrawerLink = ({ name, to, icon, onClick }) => (
 
 const drawerContent = (c) => (
 	<List>
-		<DrawerLink onClick={c} name="Home" to="/" icon={<HomeIcon />} />
-		<DrawerLink onClick={c} name="Tutorials" to="/tutorials" icon={<HelpIcon />} />
-		<DrawerLink onClick={c} name="Projects" to="/projects" icon={<CodeIcon />} />
-		<DrawerLink onClick={c} name="About" to="/about" icon={<AccountCircleIcon />} />
+		{links.map(l => (
+			<DrawerLink onClick={c} key={l.name} name={l.name} to={l.to} icon={l.icon} />
+		))}
 	</List>
 )
 
