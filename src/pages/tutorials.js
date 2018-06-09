@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import PageContent from '../components/PageContent'
-import PostLink from '../components/PostLink'
+import Container from '../components/Container'
+import PostLinkList from '../components/PostLinkList'
 
 export const query = graphql`
 	query TutorialsQuery {
@@ -29,12 +29,10 @@ export const query = graphql`
 `;
 
 const Tutorials = ({ data }) => (
-	<PageContent>
+	<Container>
 		<h1>Tutorials</h1>
-		{data.allMarkdownRemark.edges.map(({node}) => (
-			<PostLink node={node} />
-		))}
-	</PageContent>
+		<PostLinkList nodes={data.allMarkdownRemark.edges.map(({node}) => node)} />
+	</Container>
 )
 
 export default Tutorials;

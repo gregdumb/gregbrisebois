@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import PageContent from '../components/PageContent'
-import PostLink from '../components/PostLink'
+import Container from '../components/Container'
+import PostLinkList from '../components/PostLinkList'
 
 //sort: {fields: [frontmatter___date], order: DESC}
 
@@ -31,12 +31,10 @@ export const query = graphql`
 `;
 
 const Projects = ({ data }) => (
-	<PageContent>
+	<Container>
 		<h1>My Projects</h1>
-		{data.allMarkdownRemark.edges.map(({node}) => (
-			<PostLink node={node} />
-		))}
-	</PageContent>
+		<PostLinkList nodes={data.allMarkdownRemark.edges.map(({node}) => node)} />
+	</Container>
 )
 
 export default Projects;
