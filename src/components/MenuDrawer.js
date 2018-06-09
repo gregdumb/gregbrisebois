@@ -59,9 +59,9 @@ const styles = theme => ({
 	},
 });
 
-const DrawerLink = ({ name, to, icon }) => (
+const DrawerLink = ({ name, to, icon, onClick }) => (
 	<UnstyledLink to={to} >
-		<ListItem button>
+		<ListItem button onClick={onClick} >
 			<ListItemIcon>
 				{icon}
 			</ListItemIcon>
@@ -70,12 +70,12 @@ const DrawerLink = ({ name, to, icon }) => (
 	</UnstyledLink>
 )
 
-const drawerContent = (
+const drawerContent = (c) => (
 	<List>
-		<DrawerLink name="Home" to="/" icon={<HomeIcon />} />
-		<DrawerLink name="Tutorials" to="/tutorials" icon={<HelpIcon />} />
-		<DrawerLink name="Projects" to="/projects" icon={<CodeIcon />} />
-		<DrawerLink name="About" to="/about" icon={<AccountCircleIcon />} />
+		<DrawerLink onClick={c} name="Home" to="/" icon={<HomeIcon />} />
+		<DrawerLink onClick={c} name="Tutorials" to="/tutorials" icon={<HelpIcon />} />
+		<DrawerLink onClick={c} name="Projects" to="/projects" icon={<CodeIcon />} />
+		<DrawerLink onClick={c} name="About" to="/about" icon={<AccountCircleIcon />} />
 	</List>
 )
 
@@ -86,7 +86,7 @@ const MenuDrawer = ({ classes, isOpen, onClose }) => (
 				<div className={classes.fixed} >
 					<Drawer variant='permanent' open classes={{ paper: classes.drawerPaper }} >
 						<div className={classes.toolbar} />
-								{drawerContent}
+								{drawerContent(onClose)}
 					</Drawer>
 				</div>
 			</div>
@@ -106,7 +106,7 @@ const MenuDrawer = ({ classes, isOpen, onClose }) => (
 						<CloseIcon />
 					</IconButton>
 				</div>
-				{drawerContent}
+				{drawerContent(onClose)}
 			</Drawer>
 		</Hidden>
 	</span>
