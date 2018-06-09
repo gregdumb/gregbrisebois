@@ -11,7 +11,7 @@ import { renderToString } from 'react-dom/server';
 import { JssProvider } from 'react-jss';
 import getPageContext from './src/getPageContext';
 
-/*exports.replaceRenderer = ({ bodyComponent, replaceBodyHTMLString, setHeadComponents }) => {
+exports.replaceRenderer = ({ bodyComponent, replaceBodyHTMLString, setHeadComponents }) => {
 	// Get the context of the page to collected side effects.
 	const pageContext = getPageContext();
 
@@ -35,4 +35,4 @@ import getPageContext from './src/getPageContext';
 			dangerouslySetInnerHTML={{ __html: pageContext.sheetsRegistry.toString() }}
 		/>,
 	]);
-};*/
+};
