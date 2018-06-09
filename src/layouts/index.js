@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import { sizes, media } from '../theme'
+import theme, { sizes, media } from '../theme'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -90,7 +90,7 @@ class TemplateWrapper extends React.Component {
 		];
 		
 		return(
-			<MuiThemeProvider theme={muiTheme} >
+			<MuiThemeProvider theme={theme} >
 				<div className={classes.root} >
 					<Helmet
 						title={data.site.siteMetadata.title}

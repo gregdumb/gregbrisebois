@@ -3,6 +3,36 @@
  * Credit to Facebook and reactjs.org
  */
 
+import { createMuiTheme } from '@material-ui/core/styles'
+
+const constants = {
+	headers: {
+		fontFamily: 'Bitter, serif',
+		color: 'black',
+	}
+}
+
+const theme = createMuiTheme({
+	palette: {
+		primary: {
+			light: '#819ca9',
+			main: '#546e7a',
+			dark: '#29434e',
+			contrastText: '#ffffff',
+		},
+	},
+	
+	typography: {
+		fontSize: 16,
+		
+		display1: { ...constants.headers },
+		display2: { ...constants.headers },
+		display3: { ...constants.headers },
+		display4: { ...constants.headers },
+		title: { ...constants.headers },
+	}
+});
+ 
 const colors = {
 	primary: '#222',
 	white: 'white',
@@ -105,3 +135,5 @@ const media = {
   };
 
 export { colors, styles, sizes, media };
+
+export default theme;

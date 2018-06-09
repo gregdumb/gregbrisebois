@@ -6,6 +6,7 @@ import { media } from '../theme'
 import styled from 'styled-components'
 
 import { withStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
 
 const Markdown = styled.section`
 	line-height: 1.75em;
@@ -18,23 +19,27 @@ const Markdown = styled.section`
 const styles = theme => ({
 	md: {
 		'& h1': {
-			...theme.typography.display3,
-		},
-		'& h2': {
 			...theme.typography.display2,
 		},
-		'& h3': {
+		'& h2': {
 			...theme.typography.display1,
 		},
-		'& h4': {
+		'& h3': {
 			...theme.typography.headline,
 		},
-		'& h5': {
+		'& h4': {
 			...theme.typography.title,
+		},
+		'& h5': {
+			...theme.typography.subheading,
 		},
 		
 		'& p': {
-			...theme.typography.subheading,
+			...theme.typography.body1,
+		},
+		
+		'& img': {
+			maxWidth: '100%',
 		}
 	}
 })
@@ -51,9 +56,9 @@ const MarkdownBody = ({ classes, markdownRemark }) => (
 			{markdownRemark.frontmatter.date}
 			<Tags tags={markdownRemark.frontmatter.tags} />
 		</div>
-		<h1 css={{fontSize: '2.25em'}} >{markdownRemark.frontmatter.title}</h1>
+		<Typography variant="display3" gutterBottom >{markdownRemark.frontmatter.title}</Typography>
 		
-			<div className={classes.md} dangerouslySetInnerHTML={{__html: markdownRemark.html}} />
+		<div className={classes.md} dangerouslySetInnerHTML={{__html: markdownRemark.html}} />
 		
 	</div>
 )
