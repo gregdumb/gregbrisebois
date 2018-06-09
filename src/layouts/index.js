@@ -83,16 +83,18 @@ class TemplateWrapper extends React.Component {
 
 	render() {
 		let {data, children, classes} = this.props;
-
+		
+		let metaTags = [
+			{ name: 'description', content: 'Personal site of Greg Brisebois' },
+			{ name: 'keywords', content: 'greg brisebois, gregory brisebois, software, tutorials, profile' },
+		];
+		
 		return(
 			<MuiThemeProvider theme={muiTheme} >
 				<div className={classes.root} >
 					<Helmet
 						title={data.site.siteMetadata.title}
-						meta={[
-							{ name: 'description', content: 'Personal site of Greg Brisebois' },
-							{ name: 'keywords', content: 'greg brisebois, gregory brisebois, software, tutorials, profile' },
-						]}
+						meta={metaTags}
 					/>
 					<Header
 						headerTitle={data.site.siteMetadata.title}
