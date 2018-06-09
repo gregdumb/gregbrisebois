@@ -18,7 +18,7 @@ which ticked most of my boxes, but syncing was a paid feature.
 After trying about 5 or 6 different extensions I had the idea to whip up my own.
 Enter: [UtiliTab](https://chrome.google.com/webstore/detail/utilitab/poodedipoelbijcbigkmbgpjipbjjhil).
 
-![](/img/utilitab-screenshot.jpg)
+![](../img/utilitab-screenshot.jpg)
 
 It's extremly basic, but it covers all the basics just like I wanted. I've been using it for the last 
 couple months and I've found it very handy. It supports adding/editing/removing bookmarks, changing

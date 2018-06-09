@@ -25,6 +25,6 @@ This is a test project page written in Markdown and converted to HTML by Gatsby 
 
 Here's a nice picture of the Aiguille du Midi in France:
 
-![](/img/mountains.jpg "Some lovely mountains" )
+![](../img/mountains.jpg "Some lovely mountains" )
 
 From [Simon Migaj](https://unsplash.com/@simonmigaj).
