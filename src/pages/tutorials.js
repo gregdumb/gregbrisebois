@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 
 import Typography from '@material-ui/core/Typography'
 
-import Container from '../components/Container'
+import TitledPage from '../components/TitledPage'
 import PostLinkList from '../components/PostLinkList'
 
 export const query = graphql`
@@ -32,10 +32,9 @@ export const query = graphql`
 `;
 
 const Tutorials = ({ data }) => (
-	<Container paddingTop >
-		<Typography variant="display4" gutterBottom >Tutorials</Typography>
+	<TitledPage title={"Tutorials"} >
 		<PostLinkList nodes={data.allMarkdownRemark.edges.map(({node}) => node)} />
-	</Container>
+	</TitledPage>
 )
 
 export default Tutorials;

@@ -19,7 +19,7 @@ const styles = theme => ({
 })
 
 const Container = ({ children, classes, narrow, paddingTop }) => (
-	<div className={classes.gutter} style={{ paddingTop: paddingTop ? 24 : 0 }} >
+	<div className={classes.gutter} style={{ paddingTop: paddingTop ? 32 : 0 }} >
 		{children}
 	</div>
 )

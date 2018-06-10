@@ -1,8 +1,10 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Container from '../components/Container'
+
+import Typography from '@material-ui/core/Typography'
+
 import PostLinkList from '../components/PostLinkList'
-import { Typography } from '@material-ui/core';
+import TitledPage from '../components/TitledPage'
 
 //sort: {fields: [frontmatter___date], order: DESC}
 
@@ -32,10 +34,9 @@ export const query = graphql`
 `;
 
 const Projects = ({ data }) => (
-	<Container paddingTop >
-		<Typography variant="display4" gutterBottom >My Projects</Typography>
+	<TitledPage title="Projects" >
 		<PostLinkList nodes={data.allMarkdownRemark.edges.map(({node}) => node)} />
-	</Container>
+	</TitledPage>
 )
 
 export default Projects;

@@ -8,7 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 
-import Container from '../components/Container'
+import TitledPage from '../components/TitledPage'
 import Experience from '../components/Experience'
 
 const SkillGroup = ({ skills, name }) => (
@@ -133,16 +133,15 @@ const experience = [{
 }]
 
 const About = () => (
-    <Container paddingTop >
-        <Typography variant="display4" >About me</Typography>
-		
+    <TitledPage title="About Me" >
+	
 		<Button
-			variant="raised"
+			variant="outlined"
 			color="secondary"
-			style={{ margin: '16px 0' }}
+			style={{ margin: '24px 0', fontWeight: 600 }}
 			href="https://apps.gregbrisebois.com/downloads/gregbriseboisresume.pdf"
 			target="_blank" >
-			Resume
+			Download Résumé
 		</Button>
 			
         <Typography variant="display2" gutterBottom >Experience</Typography>
@@ -161,7 +160,8 @@ const About = () => (
 		))}
         <h2>About the Site</h2>
         <p>This site was built with React and Gatsby</p>
-    </Container>
+		
+    </TitledPage>
 )
 
 export default About;
