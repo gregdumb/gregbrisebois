@@ -17,6 +17,7 @@ const styles = theme => ({
 	},
 	title: {
 		flex: 1,
+		fontWeight: 'bold',
 	},
 	menuButton: {
 		marginLeft: -12,
@@ -34,7 +35,7 @@ const Header = ({ classes, headerTitle, toggleDropDown, closeDropDown, dropDownV
 				<IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={openDrawerClicked} >
 					<MenuIcon />
 				</IconButton>
-				<Typography className={classes.title} variant="title" color="inherit" >
+				<Typography className={classes.title} variant="headline" color="inherit" >
 					Greg Brisebois
 				</Typography>
 			</Toolbar>

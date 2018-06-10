@@ -91,7 +91,6 @@ class TemplateWrapper extends React.Component {
 					<PageArea >
 						{children()}
 					</PageArea>
-					{/*<Footer />*/}
 				</div>
 		)
 	}

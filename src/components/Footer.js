@@ -1,6 +1,9 @@
 import React from 'react'
+
+import { withStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
+
 import Container from './Container'
-import { colors, media } from '../theme'
 
 const FooterLink = ({ href, icon }) => (
 	<a href={href} style={{color: 'white'}} >
@@ -8,28 +11,27 @@ const FooterLink = ({ href, icon }) => (
 	</a>
 )
 
-const Footer = ({ }) => (
-	<footer css={{
-		color: colors.veryDarkText,
-		background: colors.veryDark,
-		marginTop: '4em',
-		paddingTop: '2em',
-		paddingBottom: '2em',
-		[media.lessThan('large')]: {
-			paddingTop: '1em',
-			paddingBottom: '1em',
-		}
-	}} >
+const styles = theme => ({
+	root: {
+		background: theme.palette.primary.light,
+		padding: '16px 0',
+		marginTop: 16,
+	}
+})
+
+const Footer = ({ classes }) => (
+	<footer className={classes.root} >
 		<Container>
-			<p>
+			<Typography variant="body2" color="default" >Copyright © Gregory Brisebois 2018, all rights reserved</Typography>
+			{/*<p>
 				Copyright © Gregory Brisebois 2018, all rights reserved
 				<span style={{float: 'right'}} >
 					<FooterLink href="https://www.linkedin.com/in/gregbrisebois/" icon="linkedin" />
 					<FooterLink href="https://github.com/gregdumb" icon="github" />
 				</span>
-			</p>
+			</p>*/}
 		</Container>
 	</footer>
 )
 
-export default Footer;
+export default withStyles(styles)(Footer);
