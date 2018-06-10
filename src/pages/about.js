@@ -124,15 +124,15 @@ const skillGroups = [{
 }]
 
 const About = () => (
-    <Container>
-        <h1>About me</h1>
+    <Container paddingTop >
+        <Typography variant="display4" >About me</Typography>
 		<h2>
 			<a href="https://apps.gregbrisebois.com/downloads/gregbriseboisresume.pdf" target="_blank" >
 				<i className="fas fa-file-pdf" css={{paddingRight: '0.5em'}} />
 				Resume
 			</a>
 		</h2>
-        <h2>Experience</h2>
+        <Typography variant="display3" gutterBottom >Experience</Typography>
         <ul>
             <li>
                 <h3>Analog Devices Inc.</h3>
@@ -145,7 +145,7 @@ const About = () => (
                 </ul>
             </li>
         </ul>
-        <h2>Skills</h2>
+        <Typography variant="display3" gutterBottom >Skills</Typography>
 		{skillGroups.map(group => (
 			<SkillGroup skills={group.skills} name={group.group} />
 		))}

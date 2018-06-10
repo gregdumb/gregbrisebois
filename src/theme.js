@@ -27,21 +27,22 @@ const theme = createMuiTheme({
 		
 		display4: {
 			...constants.headers,
-			fontSize: '4rem',
+			fontSize: '3rem',
 		},
 		
 		display3: {
 			...constants.headers,
-			fontSize: '3.5rem',
+			fontSize: '2.6rem',
 		},
 		
 		display2: {
 			...constants.headers,
-			fontSize: '3rem',
+			fontSize: '2.3rem',
 		},
 		
 		display1: {
 			...constants.headers,
+			fontSize: '2rem',
 		},
 		
 		headline: {

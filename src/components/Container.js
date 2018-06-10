@@ -11,15 +11,15 @@ const styles = theme => ({
 		marginRight: 'auto',
 		width: '100%',
 		boxSizing: 'border-box',
-		[theme.breakpoints.down('sm')]: {
+		[theme.breakpoints.down('xs')]: {
 			paddingLeft: 16,
 			paddingRight: 16,
 		}
 	}
 })
 
-const Container = ({ children, classes, narrow }) => (
-	<div className={classes.gutter} >
+const Container = ({ children, classes, narrow, paddingTop }) => (
+	<div className={classes.gutter} style={{ paddingTop: paddingTop ? 24 : 0 }} >
 		{children}
 	</div>
 )
