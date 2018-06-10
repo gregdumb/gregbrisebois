@@ -6,6 +6,10 @@ import { colors, media } from '../theme'
 
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
+import Typography from '@material-ui/core/Typography'
+import HelpIcon from '@material-ui/icons/Help';
+import CodeIcon from '@material-ui/icons/Code';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import ShortcutCard from '../components/ShortcutCard'
 
@@ -18,16 +22,20 @@ const styles = theme => ({
 		display: 'flex',
 		alignItems: 'center',
 		[theme.breakpoints.down('xs')]: {
-			alignItems: 'baseline'
+			//alignItems: 'baseline'
 		}
 	},
+	codeText: {
+		color: 'white',
+		fontSize: '4rem',
+	}
 })
 
 const IndexPage = ({ classes }) => (
 	<div>
 		<header className={classes.header} >
 			<Container>
-				<h1 style={{textAlign: 'left', fontSize: '4rem'}} >
+				<Typography variant="display4" className={classes.codeText} >
 					{"> "}
 					<Typer options={{
 						strings: [
@@ -42,17 +50,17 @@ const IndexPage = ({ classes }) => (
 						backDelay: 1000,
 						loop: false,
 					}} />
-				</h1>
+				</Typography>
 			</Container>
 		</header>
 		<div>
-			<Container >
-				<h3>I'm a computer scientist based in San Jose, CA.</h3>
-				<p>This site serves as my public profile and hosting space for my projects.</p>
-				<Grid container spacing={24} >
-					<ShortcutCard title="Tutorials" to="/tutorials" />
-					<ShortcutCard title="Projects" to="/projects" />
-					<ShortcutCard title="About" to="/about" />
+			<Container paddingTop >
+				<Typography variant="display2" gutterBottom >I'm a computer scientist based in San Jose, CA.</Typography>
+				<Typography variant="subheading" gutterBottom >This site serves as my public profile and hosting space for my projects.</Typography>
+				<Grid container spacing={24} style={{ marginTop: 32 }} >
+					<ShortcutCard title="Tutorials" to="/tutorials" icon={<HelpIcon />} />
+					<ShortcutCard title="Projects" to="/projects" icon={<CodeIcon />} />
+					<ShortcutCard title="About" to="/about" icon={<AccountCircleIcon />} />
 				</Grid>
 			</Container>
 		</div>

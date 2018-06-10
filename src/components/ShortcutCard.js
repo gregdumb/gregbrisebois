@@ -10,15 +10,21 @@ import UnstyledLink from './UnstyledLink'
 const styles = theme => ({
 	paper: {
 		padding: 16,
-		
+		display: 'flex',
+		alignItems: 'center',
+		color: theme.palette.secondary.dark,
+	},
+	title: {
+		marginLeft: 16,
 	}
 })
 
-const ShortcutCard = ({ classes, title, to }) => (
+const ShortcutCard = ({ classes, title, to, icon }) => (
 	<Grid item xs={12} sm={4} >
 		<UnstyledLink to={to} >
 			<Paper className={classes.paper}>
-				<Typography variant="headline" >{title}</Typography>
+				{icon}
+				<Typography variant="headline" className={classes.title} >{title}</Typography>
 			</Paper>
 		</UnstyledLink>
 	</Grid>
