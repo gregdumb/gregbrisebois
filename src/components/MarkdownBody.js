@@ -42,6 +42,14 @@ const styles = theme => ({
 			...theme.typography.body1,
 		},
 		
+		'& a': {
+			color: theme.palette.secondary.dark,
+			textDecoration: 'none',
+			'&:hover': {
+				textDecoration: 'underline',
+			}
+		},
+		
 		'& img': {
 			maxWidth: '100%',
 		}
@@ -55,12 +63,13 @@ const styles = theme => ({
 
 const MarkdownBody = ({ classes, markdownRemark }) => (
 	<div >
-		<Helmet title={markdownRemark.frontmatter.title} />
-		<div className={classes.metadata} >
-			<Typography variant="subheading" >{markdownRemark.frontmatter.date}</Typography>
-			<Tags tags={markdownRemark.frontmatter.tags} />
-		</div>
+		<Helmet title={`${markdownRemark.frontmatter.title} - Greg Brisebois`} />
+		
+		<Typography variant="subheading" gutterBottom color="textSecondary" >{markdownRemark.frontmatter.date}</Typography>
+		
 		<Typography variant="display4" gutterBottom >{markdownRemark.frontmatter.title}</Typography>
+		
+		<Tags tags={markdownRemark.frontmatter.tags} />
 		
 		<div className={classes.md} dangerouslySetInnerHTML={{__html: markdownRemark.html}} />
 		

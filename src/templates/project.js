@@ -9,7 +9,7 @@ export const query = graphql`
 			html
 			frontmatter {
 				title
-				date
+				date(formatString: "MMMM DD, YYYY")
 				tags
 			}
 		}
@@ -19,7 +19,7 @@ export const query = graphql`
 const Project = ({data}) => {
 	
 	return(
-		<Container>
+		<Container paddingTop >
 			<MarkdownBody markdownRemark={data.markdownRemark} />
 		</Container>
 	);
