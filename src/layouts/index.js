@@ -12,7 +12,6 @@ import PageArea from '../components/PageArea'
 require('typeface-bitter')
 require('typeface-open-sans')
 require("prismjs/themes/prism-tomorrow.css")
-//import './index.css'
 
 import { withStyles } from '@material-ui/core';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';

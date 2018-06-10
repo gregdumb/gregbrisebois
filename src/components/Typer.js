@@ -20,6 +20,7 @@ injectGlobal`
 	.typed-cursor: {
 		opacity: 1;
 		animation: ${blink} 0.7s infinite;
+		color: red;
 	}
 	
 	.typed-fade-out: {
