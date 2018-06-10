@@ -1,5 +1,5 @@
 import React from 'react'
-import { css } from 'glamor'
+import Helmet from 'react-helmet'
 import Container from '../components/Container'
 import Tags from '../components/Tags'
 import { media } from '../theme'
@@ -51,6 +51,7 @@ const styles = theme => ({
 
 const MarkdownBody = ({ classes, markdownRemark }) => (
 	<div >
+		<Helmet title={markdownRemark.frontmatter.title} />
 		<div className={classes.metadata} >
 			<Typography variant="subheading" >{markdownRemark.frontmatter.date}</Typography>
 			<Tags tags={markdownRemark.frontmatter.tags} />
