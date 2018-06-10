@@ -32,8 +32,8 @@ export const query = graphql`
 `;
 
 const Projects = ({ data }) => (
-	<Container>
-		<Typography variant="display1" gutterBottom >My Projects</Typography>
+	<Container paddingTop >
+		<Typography variant="display4" gutterBottom >My Projects</Typography>
 		<PostLinkList nodes={data.allMarkdownRemark.edges.map(({node}) => node)} />
 	</Container>
 )

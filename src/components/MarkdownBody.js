@@ -38,6 +38,10 @@ const styles = theme => ({
 			...theme.typography.body1,
 		},
 		
+		'& li': {
+			...theme.typography.body1,
+		},
+		
 		'& img': {
 			maxWidth: '100%',
 		}

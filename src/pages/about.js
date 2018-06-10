@@ -6,8 +6,10 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
 
 import Container from '../components/Container'
+import Experience from '../components/Experience'
 
 const SkillGroup = ({ skills, name }) => (
 	<div style={{marginBottom: 32}} >
@@ -123,29 +125,37 @@ const skillGroups = [{
 	}]
 }]
 
+const experience = [{
+	company: "Analog Devices",
+	jobTitle: "Mixed Signal Intern",
+	dates: "July 2017 - Present",
+	description: "Worked on multiple projects, including: <ul><li>Web-bsaed design aid tools</li><li>Linduino (Arduino) driver development for ADI parts</li><li>Desktop .NET plugins for ACE testing platform</li></ul>",
+}]
+
 const About = () => (
     <Container paddingTop >
         <Typography variant="display4" >About me</Typography>
-		<h2>
-			<a href="https://apps.gregbrisebois.com/downloads/gregbriseboisresume.pdf" target="_blank" >
-				<i className="fas fa-file-pdf" css={{paddingRight: '0.5em'}} />
-				Resume
-			</a>
-		</h2>
-        <Typography variant="display3" gutterBottom >Experience</Typography>
-        <ul>
-            <li>
-                <h3>Analog Devices Inc.</h3>
-                <p style={{margin: '0.5em 0'}} >July 2017 - Present</p>
-                <p style={{margin: '0.5em 0'}} >Software Intern, multiple projects including:</p>
-                <ul>
-                    <li>Web-based design aid tools for specific parts</li>
-                    <li>Linduino (Arduino) driver development for ADI parts</li>
-                    <li>Desktop .NET plugins for the ACE testing platform</li>
-                </ul>
-            </li>
-        </ul>
-        <Typography variant="display3" gutterBottom >Skills</Typography>
+		
+		<Button
+			variant="raised"
+			color="secondary"
+			style={{ margin: '16px 0' }}
+			href="https://apps.gregbrisebois.com/downloads/gregbriseboisresume.pdf"
+			target="_blank" >
+			Resume
+		</Button>
+			
+        <Typography variant="display2" gutterBottom >Experience</Typography>
+        
+		<Grid spacing={24} style={{ marginBottom: 32 }} >
+			{experience.map(e => (
+				<Grid item md={12} >
+					<Experience experience={e} />
+				</Grid>
+			))}
+		</Grid>
+		
+        <Typography variant="display2" gutterBottom >Skills</Typography>
 		{skillGroups.map(group => (
 			<SkillGroup skills={group.skills} name={group.group} />
 		))}

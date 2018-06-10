@@ -1,5 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
+
+import Typography from '@material-ui/core/Typography'
+
 import Container from '../components/Container'
 import PostLinkList from '../components/PostLinkList'
 
@@ -29,8 +32,8 @@ export const query = graphql`
 `;
 
 const Tutorials = ({ data }) => (
-	<Container>
-		<h1>Tutorials</h1>
+	<Container paddingTop >
+		<Typography variant="display4" gutterBottom >Tutorials</Typography>
 		<PostLinkList nodes={data.allMarkdownRemark.edges.map(({node}) => node)} />
 	</Container>
 )
