@@ -11,6 +11,7 @@ import LinkedinIcon from 'mdi-material-ui/Linkedin';
 import { withStyles } from '@material-ui/core/styles';
 
 import Container from './Container'
+import UnstyledLink from './UnstyledLink'
 
 const styles = theme => ({
 	root: {
@@ -38,7 +39,9 @@ const Header = ({ classes, headerTitle, toggleDropDown, closeDropDown, dropDownV
 					<MenuIcon />
 				</IconButton>
 				<Typography className={classes.title} variant="headline" color="inherit" >
-					Greg Brisebois
+					<UnstyledLink>
+						Greg Brisebois
+					</UnstyledLink>
 				</Typography>
 				<IconButton color="inherit" href="https://www.linkedin.com/in/gregbrisebois/" target="_blank" >
 					<LinkedinIcon />
