@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
@@ -96,7 +97,7 @@ const drawerContent = (c) => (
 	</List>
 )
 
-const MenuDrawer = ({ classes, isOpen, onClose }) => (
+const MenuDrawer = ({ classes, isOpen, onOpen, onClose }) => (
 	<span>
 		<Hidden mdDown implementation='css' >
 			<div className={classes.root} >
@@ -109,10 +110,11 @@ const MenuDrawer = ({ classes, isOpen, onClose }) => (
 			</div>
 		</Hidden>
 		<Hidden lgUp >
-			<Drawer
+			<SwipeableDrawer
 				variant='temporary'
 				anchor='left'
 				open={isOpen}
+				onOpen={onOpen}
 				onClose={onClose}
 				classes={{ paper: classes.drawerPaper }}
 				ModalProps={{ keepMounted: true }}
@@ -124,7 +126,7 @@ const MenuDrawer = ({ classes, isOpen, onClose }) => (
 					</IconButton>
 				</div>
 				{drawerContent(onClose)}
-			</Drawer>
+			</SwipeableDrawer>
 		</Hidden>
 	</span>
 )

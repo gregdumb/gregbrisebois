@@ -87,7 +87,7 @@ class TemplateWrapper extends React.Component {
 						dropDownVisible={this.state.dropDownVisible}
 						openDrawerClicked={this.openDrawer}
 					/>
-					<MenuDrawer className={classes.grow} isOpen={this.state.menuOpen} onClose={this.onDrawerClose} />
+					<MenuDrawer className={classes.grow} isOpen={this.state.menuOpen} onOpen={this.openDrawer} onClose={this.onDrawerClose} />
 					<PageArea >
 						{children()}
 					</PageArea>
