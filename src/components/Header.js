@@ -6,6 +6,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import GithubCircleIcon from 'mdi-material-ui/GithubCircle';
+import LinkedinIcon from 'mdi-material-ui/Linkedin';
 import { withStyles } from '@material-ui/core/styles';
 
 import Container from './Container'
@@ -38,6 +40,12 @@ const Header = ({ classes, headerTitle, toggleDropDown, closeDropDown, dropDownV
 				<Typography className={classes.title} variant="headline" color="inherit" >
 					Greg Brisebois
 				</Typography>
+				<IconButton color="inherit" href="https://www.linkedin.com/in/gregbrisebois/" target="_blank" >
+					<LinkedinIcon />
+				</IconButton>
+				<IconButton color="inherit" href="https://github.com/gregdumb" target="_blank" >
+					<GithubCircleIcon />
+				</IconButton>
 			</Toolbar>
 		</AppBar>
 	</header>
