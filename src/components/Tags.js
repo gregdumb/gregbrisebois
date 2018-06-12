@@ -28,7 +28,7 @@ const styles = theme => ({
 const Tags = ({ classes, tags, css }) => (
 	<div>
 		{tags && tags.map(tag => (
-			<UnstyledLink to={`/tags/${_.kebabCase(tag)}`} >
+			<UnstyledLink to={`/tags/${_.kebabCase(tag)}`} key={tag} >
 				<Chip
 					className={classes.chip}
 					label={tag}

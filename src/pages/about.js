@@ -16,7 +16,7 @@ const SkillGroup = ({ skills, name }) => (
 		<Typography variant="title" gutterBottom>{name}</Typography>
 		<Grid container spacing={24} >
 			{skills.map(skill => (
-				<Grid item xs={4} sm={3} md={2} lg={2} >
+				<Grid item xs={4} sm={3} md={2} lg={2} key={skill.name} >
 					<Card >
 						<div style={{ padding: skill.padding || 0 }} >
 							<CardMedia image={skill.image} title={skill.name} style={{paddingTop: '100%'}} />
@@ -146,9 +146,9 @@ const About = () => (
 			
         <Typography variant="display2" gutterBottom >Experience</Typography>
         
-		<Grid spacing={24} style={{ marginBottom: 32 }} >
+		<Grid container spacing={24} style={{ marginBottom: 32 }} >
 			{experience.map(e => (
-				<Grid item md={12} >
+				<Grid item md={12} key={e.company} >
 					<Experience experience={e} />
 				</Grid>
 			))}
@@ -156,7 +156,7 @@ const About = () => (
 		
         <Typography variant="display2" gutterBottom >Skills</Typography>
 		{skillGroups.map(group => (
-			<SkillGroup skills={group.skills} name={group.group} />
+			<SkillGroup skills={group.skills} name={group.group} key={group.group} />
 		))}
         <h2>About the Site</h2>
         <p>This site was built with React and Gatsby</p>

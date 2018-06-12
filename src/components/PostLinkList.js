@@ -12,7 +12,7 @@ const styles = {
 const PostLinkList = ({ classes, nodes }) => (
 	<Grid container spacing={24} >
 		{nodes.map(node => (
-			<Grid item xs={12} sm={6} md={4} >
+			<Grid item xs={12} sm={6} md={4} key={node.fields.slug} >
 				<PostLink node={node} />
 			</Grid>
 		))}
