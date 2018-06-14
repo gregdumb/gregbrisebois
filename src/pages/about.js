@@ -158,8 +158,12 @@ const About = () => (
 		{skillGroups.map(group => (
 			<SkillGroup skills={group.skills} name={group.group} key={group.group} />
 		))}
-        <h2>About the Site</h2>
-        <p>This site was built with React and Gatsby</p>
+		
+        <Typography variant="display2" gutterBottom >About the Site</Typography>
+        <Typography variant="body1" >
+			This site was built with React using the <a href="https://www.gatsbyjs.org/" >Gatsby</a> static site generator.
+			Material Design theming was made possible by the wonderful <a href="https://material-ui.com/" >Material-UI</a>.
+		</Typography>
 		
     </TitledPage>
 )
