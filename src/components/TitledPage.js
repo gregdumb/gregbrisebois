@@ -11,7 +11,7 @@ const styles = theme => ({
 })
 
 const TitledPage = ({ classes, children, title }) => (
-	<Container paddingTop >
+	<Container paddingTop paddingBottom >
 		<Helmet title={`${title} - Greg Brisebois`} />
 		<Typography variant="display4" gutterBottom >{title}</Typography>
 		{children}

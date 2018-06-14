@@ -18,8 +18,13 @@ const styles = theme => ({
 	}
 })
 
-const Container = ({ children, classes, narrow, paddingTop }) => (
-	<div className={classes.gutter} style={{ paddingTop: paddingTop ? 32 : 0 }} >
+const Container = ({ children, classes, narrow, paddingTop, paddingBottom }) => (
+	<div
+		className={classes.gutter}
+		style={{
+			paddingTop: paddingTop ? 32 : 0,
+			paddingBottom: paddingBottom ? 32 : 0,
+		}} >
 		{children}
 	</div>
 )
