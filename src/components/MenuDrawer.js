@@ -22,6 +22,9 @@ import HelpIcon from '@material-ui/icons/Help';
 import CodeIcon from '@material-ui/icons/Code';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import CloseIcon from '@material-ui/icons/Close';
+import GithubCircleIcon from 'mdi-material-ui/GithubCircle';
+import LinkedinIcon from 'mdi-material-ui/Linkedin';
+import UnrealIcon from 'mdi-material-ui/Unreal'
 
 import UnstyledLink from '../components/UnstyledLink'
 
@@ -32,6 +35,8 @@ const styles = theme => ({
 		width: drawerWidth,
 		position: 'relative',
 		flex: '0 0 auto',
+		display: 'flex',
+		flexDirection: 'column',
 	},
 	fixed: {
 		position: 'fixed',
@@ -42,13 +47,26 @@ const styles = theme => ({
 		display: 'flex',
 		alignItems: 'center',
 	},
+	drawerContent: {
+		display: 'flex',
+		flexDirection: 'column',
+		flex: 1,
+	},
 	drawerPaper: {
 		width: drawerWidth,
 		position: 'relative',
+		display: 'flex',
 		flex: '0 0 auto',
 		//[theme.breakpoints.up('md')]: {
 		//	position: 'relative',
 		//},
+	},
+	drawerIconButtonPaper: {
+		color: theme.palette.text.secondary,
+		padding: '16px 16px',
+	},
+	iconButton: {
+		marginRight: 8,
 	},
 	closeButton: {
 		marginLeft: 6,
@@ -89,12 +107,26 @@ const DrawerLink = ({ name, to, icon, onClick }) => (
 	</UnstyledLink>
 )
 
-const drawerContent = (c) => (
-	<List>
-		{links.map(l => (
-			<DrawerLink onClick={c} key={l.name} name={l.name} to={l.to} icon={l.icon} />
-		))}
-	</List>
+const drawerContent = (c, classes) => (
+	<div className={classes.drawerContent} >
+		<List style={{ flex: 1 }} >
+			{links.map(l => (
+				<DrawerLink onClick={c} key={l.name} name={l.name} to={l.to} icon={l.icon} />
+			))}
+		</List>
+		<Divider />
+		<div className={classes.drawerIconButtonPaper} >
+			<IconButton color="inherit" href="https://www.linkedin.com/in/gregbrisebois/" target="_blank" className={classes.iconButton} >
+				<LinkedinIcon />
+			</IconButton>
+			<IconButton color="inherit" href="https://github.com/gregdumb" target="_blank" className={classes.iconButton} >
+				<GithubCircleIcon />
+			</IconButton>
+			<IconButton color="inherit" href="https://forums.unrealengine.com/member/179-gregdumb" target="_blank" className={classes.iconButton} >
+				<UnrealIcon />
+			</IconButton>
+		</div>
+	</div>
 )
 
 const MenuDrawer = ({ classes, isOpen, onOpen, onClose }) => (
@@ -104,7 +136,7 @@ const MenuDrawer = ({ classes, isOpen, onOpen, onClose }) => (
 				<div className={classes.fixed} >
 					<Drawer variant='permanent' open classes={{ paper: classes.drawerPaper }} >
 						<div className={classes.toolbar} />
-								{drawerContent(onClose)}
+						{drawerContent(onClose, classes)}
 					</Drawer>
 				</div>
 			</div>
@@ -119,13 +151,12 @@ const MenuDrawer = ({ classes, isOpen, onOpen, onClose }) => (
 				classes={{ paper: classes.drawerPaper }}
 				ModalProps={{ keepMounted: true }}
 			>
-			
 				<div className={classes.toolbar} >
 					<IconButton className={classes.closeButton} color="inherit" aria-label="Close" onClick={onClose} >
 						<CloseIcon />
 					</IconButton>
 				</div>
-				{drawerContent(onClose)}
+				{drawerContent(onClose, classes)}
 			</SwipeableDrawer>
 		</Hidden>
 	</span>
