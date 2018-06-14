@@ -69,7 +69,10 @@ const styles = theme => ({
 		marginRight: 8,
 	},
 	closeButton: {
-		marginLeft: 6,
+		marginLeft: 12,
+		[theme.breakpoints.down('xs')]: {
+			marginLeft: 4,
+		}
 	},
 	content: {
 		flexGrow: 1,
