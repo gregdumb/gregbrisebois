@@ -25,6 +25,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import GithubCircleIcon from 'mdi-material-ui/GithubCircle';
 import LinkedinIcon from 'mdi-material-ui/Linkedin';
 import UnrealIcon from 'mdi-material-ui/Unreal'
+import MailOutlineIcon from '@material-ui/icons/MailOutline'
 
 import UnstyledLink from '../components/UnstyledLink'
 
@@ -64,6 +65,8 @@ const styles = theme => ({
 	drawerIconButtonPaper: {
 		color: theme.palette.text.secondary,
 		padding: '16px 16px',
+		display: 'flex',
+		justifyContent: 'space-evenly',
 	},
 	iconButton: {
 		marginRight: 8,
@@ -127,6 +130,9 @@ const drawerContent = (c, classes) => (
 			</IconButton>
 			<IconButton color="inherit" href="https://forums.unrealengine.com/member/179-gregdumb" target="_blank" className={classes.iconButton} >
 				<UnrealIcon />
+			</IconButton>
+			<IconButton color="inherit" href="mailto:gregoryjjb@gmail.com" target="_blank" className={classes.iconButton} >
+				<MailOutlineIcon />
 			</IconButton>
 		</div>
 	</div>
