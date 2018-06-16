@@ -10,7 +10,6 @@ import MenuDrawer from '../components/MenuDrawer'
 import PageArea from '../components/PageArea'
 
 require('typeface-bitter')
-require('typeface-open-sans')
 require("prismjs/themes/prism-tomorrow.css")
 
 import { withStyles } from '@material-ui/core';
