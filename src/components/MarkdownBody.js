@@ -42,13 +42,13 @@ const styles = theme => ({
 			...theme.typography.body1,
 		},
 		
-		'& a': {
+		/*'& a': {
 			color: theme.palette.secondary.dark,
 			textDecoration: 'none',
 			'&:hover': {
 				textDecoration: 'underline',
 			}
-		},
+		},*/
 		
 		'& img': {
 			maxWidth: '100%',

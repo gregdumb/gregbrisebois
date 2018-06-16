@@ -27,6 +27,11 @@ export const query = graphql`
 `;
 
 const styles = theme => ({
+	'@global': {
+		'a': {
+			...theme.mixins.link,
+		}
+	},
 	root: {
 		display: 'flex',
 		alignItems: 'stretch',

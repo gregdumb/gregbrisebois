@@ -7,6 +7,7 @@ const styles = {
 		color: 'unset',
 		textDecoration: 'none',
 		'&:hover': {
+			color: 'unset',
 			textDecoration: 'none',
 		}
 	}

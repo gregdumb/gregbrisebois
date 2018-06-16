@@ -4,10 +4,7 @@ const constants = {
 	headers: {
 		fontFamily: 'Bitter, serif',
 		//color: '#222',
-	}
-}
-
-const theme = createMuiTheme({
+	},
 	palette: {
 		primary: {
 			light: '#819ca9',
@@ -20,6 +17,23 @@ const theme = createMuiTheme({
 			main: '#4fc3f7',
 			dark: '#0093c4',
 			contrastText: '#000'
+		}
+	},
+}
+
+const theme = createMuiTheme({
+	palette: {
+		...constants.palette,
+	},
+	
+	mixins: {
+		link: {
+			color: constants.palette.secondary.dark,
+			textDecoration: 'none',
+			'&:hover': {
+				color: constants.palette.secondary.main,
+				textDecoration: 'underline',
+			}
 		}
 	},
 	
