@@ -1,45 +1,27 @@
 import React from 'react'
 import Typed from 'typed.js'
-//import { css } from 'glamor'
+import { injectGlobal, keyframes } from 'styled-components'
 
-import { injectGlobal, keyframes } from 'styled-components';
+import { withStyle, withStyles } from '@material-ui/core/styles'
 
-/*let typedjsBlink = css.keyframes({
-	'0%': {opacity: 1},
-	'50%': {opacity: 0},
-	'100%': {opacity: 1},
-});*/
-
-let blink = keyframes`
-	0% { opacity: 1; }
-	50% { opacity: 0; }
-	100% { opacity: 1; }
-`
-
-injectGlobal`
-	.typed-cursor: {
-		opacity: 1;
-		animation: ${blink} 0.7s infinite;
-		color: red;
+const styles = theme => ({
+	'@global': {
+		'@keyframes blinky': {
+			'0%': { opacity: 1 },
+			'50%': { opacity: 0 },
+			'100%': { opacity: 1 },
+		},
+		'.typed-cursor': {
+			opacity: 1,
+			animation: `blinky 0.7s infinite`,
+		},
+		'.typed-fade-out': {
+			opacity: 0,
+			transition: 'opacity 0.25s',
+			animation: 0,
+		}
 	}
-	
-	.typed-fade-out: {
-		opacity: 0;
-		transition: opacity .25s;
-		animation: 0;
-	}
-`
-
-/*css.global('.typed-cursor', {
-	opacity: 1,
-	animation: `${typedjsBlink} 0.7s infinite`,
-});
-
-css.global('.typed-fade-out', {
-	opacity: 0,
-	transition: 'opacity .25s',
-	animation: 0,
-});*/
+})
 
 class Typer extends React.Component {
 	componentDidMount() {
@@ -60,4 +42,4 @@ class Typer extends React.Component {
 	}
 }
 
-export default Typer;
+export default withStyles(styles)(Typer);
