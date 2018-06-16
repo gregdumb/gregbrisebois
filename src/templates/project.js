@@ -19,7 +19,7 @@ export const query = graphql`
 const Project = ({data}) => {
 	
 	return(
-		<Container paddingTop >
+		<Container paddingTop paddingBottom >
 			<MarkdownBody markdownRemark={data.markdownRemark} />
 		</Container>
 	);
