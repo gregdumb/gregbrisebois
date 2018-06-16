@@ -13,7 +13,7 @@ Final result:
 
 ## Show Editor
 
-![](/img/showeditor.png)
+![](../img/showeditor.png)
 
 The editor provides a GUI to create simple shows where channels can be turned on and off in time with the music. The show data can be exported as JSON or as a simple list of timestamps and keyframes.
 

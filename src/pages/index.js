@@ -2,24 +2,40 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Container from '../components/Container'
 import Typer from '../components/Typer'
-import BoxLink from '../components/BoxLink'
 import { colors, media } from '../theme'
 
-const IndexPage = () => (
+import { withStyles } from '@material-ui/core/styles'
+import Grid from '@material-ui/core/Grid'
+import Typography from '@material-ui/core/Typography'
+import HelpIcon from '@material-ui/icons/Help';
+import CodeIcon from '@material-ui/icons/Code';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+
+import ShortcutCard from '../components/ShortcutCard'
+
+const styles = theme => ({
+	header: {
+		background: theme.palette.primary.light,
+		color: 'white',
+		height: '300px',
+		boxSizing: 'border-box',
+		display: 'flex',
+		alignItems: 'center',
+		[theme.breakpoints.down('xs')]: {
+			//alignItems: 'baseline'
+		}
+	},
+	codeText: {
+		color: 'white',
+		fontSize: '4rem',
+	}
+})
+
+const IndexPage = ({ classes }) => (
 	<div>
-		<header css={{
-			background: 'cornflowerblue',
-			color: 'white',
-			height: '300px',
-			boxSizing: 'border-box',
-			display: 'flex',
-			alignItems: 'center',
-			[media.lessThan('medium')]: {
-				alignItems: 'baseline',
-			}
-			}} >
+		<header className={classes.header} >
 			<Container>
-				<h1 css={{textAlign: 'left', fontSize: '4rem'}} >
+				<Typography variant="display4" className={classes.codeText} >
 					{"> "}
 					<Typer options={{
 						strings: [
@@ -34,27 +50,21 @@ const IndexPage = () => (
 						backDelay: 1000,
 						loop: false,
 					}} />
-				</h1>
+				</Typography>
 			</Container>
 		</header>
 		<div>
-			<Container >
-				<h3>I'm a computer scientist based in San Jose, CA.</h3>
-				<p>This site serves as my public profile and hosting space for my projects.</p>
-				<div css={{
-					display: 'flex',
-					justifyContent: 'center',
-					[media.lessThan('small')]: {
-						flexDirection: 'column',
-					}
-				}} >
-					<BoxLink text="Tutorials" icon="graduation-cap" to="/tutorials/" />
-					<BoxLink text="Projects" icon="wrench" to="/projects/" />
-					<BoxLink text="About" icon="question" to="/about/" />
-				</div>
+			<Container paddingTop >
+				<Typography variant="display2" gutterBottom >I'm a computer scientist based in San Jose, CA.</Typography>
+				<Typography variant="subheading" gutterBottom >This site serves as my public profile and hosting space for my projects.</Typography>
+				<Grid container spacing={24} style={{ marginTop: 32 }} >
+					<ShortcutCard title="Tutorials" to="/tutorials" icon={<HelpIcon />} />
+					<ShortcutCard title="Projects" to="/projects" icon={<CodeIcon />} />
+					<ShortcutCard title="About" to="/about" icon={<AccountCircleIcon />} />
+				</Grid>
 			</Container>
 		</div>
   	</div>
 )
 
-export default IndexPage;
+export default withStyles(styles)(IndexPage);

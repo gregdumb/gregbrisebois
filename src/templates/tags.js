@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-// Components
 import Link from "gatsby-link"
-import PageContent from '../components/PageContent'
-import PostLink from '../components/PostLink'
+
+import TitledPage from '../components/TitledPage'
+import PostLinkList from '../components/PostLinkList'
 
 const Tags = ({ pathContext, data }) => {
 	const { tag } = pathContext;
@@ -14,12 +13,9 @@ const Tags = ({ pathContext, data }) => {
 	} tagged with "${tag}"`;
 	
 	return (
-		<PageContent>
-		<h1>{tagHeader}</h1>
-		{edges.map(({ node }) => (
-			<PostLink node={node} />
-		))}
-		</PageContent>
+		<TitledPage title={tagHeader} >
+			<PostLinkList nodes={edges.map(({ node }) => node)} />
+		</TitledPage>
 	);
 };
 

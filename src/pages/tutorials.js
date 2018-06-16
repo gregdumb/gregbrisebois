@@ -1,7 +1,9 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import PageContent from '../components/PageContent'
-import PostLink from '../components/PostLink'
+
+import Typography from '@material-ui/core/Typography'
+
+import TitledPage from '../components/TitledPage'
+import PostLinkList from '../components/PostLinkList'
 
 export const query = graphql`
 	query TutorialsQuery {
@@ -29,12 +31,9 @@ export const query = graphql`
 `;
 
 const Tutorials = ({ data }) => (
-	<PageContent>
-		<h1>Tutorials</h1>
-		{data.allMarkdownRemark.edges.map(({node}) => (
-			<PostLink node={node} />
-		))}
-	</PageContent>
+	<TitledPage title={"Tutorials"} >
+		<PostLinkList nodes={data.allMarkdownRemark.edges.map(({node}) => node)} />
+	</TitledPage>
 )
 
 export default Tutorials;

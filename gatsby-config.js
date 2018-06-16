@@ -3,7 +3,7 @@ module.exports = {
 		title: 'Greg Brisebois',
 	},
 	plugins: [
-		'gatsby-plugin-glamor',
+		//'gatsby-plugin-glamor',
 		'gatsby-plugin-react-helmet',
 		{
 			resolve: 'gatsby-source-filesystem',
@@ -19,7 +19,7 @@ module.exports = {
 					{
 						resolve: 'gatsby-remark-images',
 						options: {
-							maxWidth: 590,
+							maxWidth: 1000,
 							linkImagesToOriginal: true,
 							backgroundColor: 'transparent',
 						}
@@ -64,5 +64,6 @@ module.exports = {
 		},
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',
+		'gatsby-plugin-react-next',
 	],
 };

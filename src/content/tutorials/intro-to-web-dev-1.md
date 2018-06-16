@@ -29,5 +29,3 @@ What's going on here? Well, it's very, very common, when writing HTML, to put ta
 Hello there my **boy**
 
 Tada!
-
-Now figure the rest out on your own bub.

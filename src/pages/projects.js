@@ -1,7 +1,9 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import PageContent from '../components/PageContent'
-import PostLink from '../components/PostLink'
+
+import Typography from '@material-ui/core/Typography'
+
+import PostLinkList from '../components/PostLinkList'
+import TitledPage from '../components/TitledPage'
 
 //sort: {fields: [frontmatter___date], order: DESC}
 
@@ -31,12 +33,9 @@ export const query = graphql`
 `;
 
 const Projects = ({ data }) => (
-	<PageContent>
-		<h1>My Projects</h1>
-		{data.allMarkdownRemark.edges.map(({node}) => (
-			<PostLink node={node} />
-		))}
-	</PageContent>
+	<TitledPage title="Projects" >
+		<PostLinkList nodes={data.allMarkdownRemark.edges.map(({node}) => node)} />
+	</TitledPage>
 )
 
 export default Projects;

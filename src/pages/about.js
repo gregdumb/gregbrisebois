@@ -1,100 +1,72 @@
 import React from 'react'
 import PageContent from '../components/PageContent'
-import { styles } from '../theme'
 
-const SkillGroup = ({ children, name }) => (
-    <div css={{
-        marginBottom: '2em',
-    }} >
-        <h3>{name}</h3>
-        <div css={{
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-        }} >
-            {children}
-        </div>
-    </div>
-)
+import Grid from '@material-ui/core/Grid'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import CardMedia from '@material-ui/core/CardMedia'
+import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
 
-const Skill = ({ name, image, padding }) => (
-    <div css={{
-        //width: '8em',
-        marginRight: '1em',
-        marginBottom: '1em',
-        //border: '1px solid lightgrey',
-        textAlign: 'center',
-        ...styles.shadow,
-    }} >
-        <img src={image} css={{
-            width: '8em',
-            height: '8em',
-            padding: (padding || 0),
-            boxSizing: 'border-box',
-        }} />
-        <p css={{
-            marginTop: '0.25em',
-            marginBottom: '0.25em',
-        }} >{name}</p>
-    </div>
+import TitledPage from '../components/TitledPage'
+import Experience from '../components/Experience'
+
+import { skills, experience } from '../content/skills'
+
+const SkillGroup = ({ skills, name }) => (
+	<div style={{marginBottom: 32}} >
+		<Typography variant="title" gutterBottom>{name}</Typography>
+		<Grid container spacing={24} >
+			{skills.map(skill => (
+				<Grid item xs={4} sm={3} md={2} lg={2} key={skill.name} >
+					<Card >
+						<div style={{ padding: skill.padding || 0 }} >
+							<CardMedia image={skill.image} title={skill.name} style={{paddingTop: '100%'}} />
+						</div>
+						<CardContent style={{padding: 8}} >
+							<Typography noWrap variant='body1' align="center" >{skill.name}</Typography>
+						</CardContent>
+					</Card>
+				</Grid>
+			))}
+		</Grid>
+	</div>
 )
 
 const About = () => (
-    <PageContent>
-        <h1>About me</h1>
-		<h2>
-			<a href="https://apps.gregbrisebois.com/downloads/gregbriseboisresume.pdf" target="_blank" >
-				<i className="fas fa-file-pdf" css={{paddingRight: '0.5em'}} />
-				Resume
-			</a>
-		</h2>
-        <h2>Experience</h2>
-        <ul>
-            <li>
-                <h3>Analog Devices Inc.</h3>
-                <p style={{margin: '0.5em 0'}} >July 2017 - Present</p>
-                <p style={{margin: '0.5em 0'}} >Software Intern, multiple projects including:</p>
-                <ul>
-                    <li>Web-based design aid tools for specific parts</li>
-                    <li>Linduino (Arduino) driver development for ADI parts</li>
-                    <li>Desktop .NET plugins for the ACE testing platform</li>
-                </ul>
-            </li>
-        </ul>
-        <h2>Skills</h2>
-        <SkillGroup name={"Languages"} >
-            <Skill name="Javascript" image={'/img/logos/js-logo.jpg'} />
-            <Skill name="HTML5" image={'/img/logos/html5-logo.svg'} padding={'10%'} />
-            <Skill name="C++" image={'/img/logos/cplusplus-logo.svg'} padding={'5%'} />
-            <Skill name="Java" image={'/img/logos/java-logo.jpg'} padding={'5%'} />
-            <Skill name="Python" image={'/img/logos/python-logo.svg'} padding={'10%'} />
-        </SkillGroup>
-        <SkillGroup name={"Frontend"} >
-            <Skill name="React" image={'/img/logos/react-logo.jpg'} />
-            <Skill name="Redux" image={'/img/logos/redux-logo.jpg'} padding={'10%'} />
-            <Skill name="Gatsby" image={'/img/logos/gatsby-logo.jpg'} padding={'10%'} />
-            <Skill name="jQuery" image={'/img/logos/jquery-logo.jpg'} padding={'10%'} />
-            <Skill name="Android" image={'/img/logos/android-logo.jpg'} padding={'10%'} />
-        </SkillGroup>
-        <SkillGroup name={"Server Frameworks/Libraries"} >
-            <Skill name="Express" image={'/img/logos/express-logo.jpg'} padding={'5%'} />
-            <Skill name="Sequelize" image={'/img/logos/sequelize-logo.jpg'} padding={'5%'} />
-            <Skill name="Socket.io" image={'/img/logos/socket-logo.jpg'} padding={'0'} />
-        </SkillGroup>
-		<SkillGroup name={"Server Technologies"} >
-			<Skill name="Node.js" image={'/img/logos/node-logo.jpg'} padding={'5%'} />
-			<Skill name="Apache" image={'/img/logos/apache-logo.jpg'} padding={'10%'} />
-			<Skill name="NGINX" image={'/img/logos/nginx-logo.jpg'} padding={'5%'} />
-            <Skill name="MySQL" image={'/img/logos/mysql-logo.jpg'} padding={'10%'} />
-			<Skill name="Ubuntu Server" image={'/img/logos/ubuntu-logo.jpg'} padding={'10%'} />
-		</SkillGroup>
-        <SkillGroup name={"Game Development"} >
-            <Skill name="Unreal Engine" image={'/img/logos/unreal-logo.jpg'} padding={'10%'} />
-            <Skill name="Blender" image={'/img/logos/blender-logo.jpg'} padding={'10%'} />
-        </SkillGroup>
-        <h2>About the Site</h2>
-        <p>This site was built with React and Gatsby</p>
-    </PageContent>
+    <TitledPage title="About Me" >
+	
+		<Button
+			variant="outlined"
+			color="secondary"
+			style={{ margin: '24px 0', fontWeight: 600 }}
+			href="https://apps.gregbrisebois.com/downloads/gregbriseboisresume.pdf"
+			target="_blank" >
+			Download Résumé
+		</Button>
+			
+        <Typography variant="display2" gutterBottom >Experience</Typography>
+        
+		<Grid container spacing={24} style={{ marginBottom: 32 }} >
+			{experience.map(e => (
+				<Grid item md={12} key={e.company} >
+					<Experience experience={e} />
+				</Grid>
+			))}
+		</Grid>
+		
+        <Typography variant="display2" gutterBottom >Skills</Typography>
+		{skills.map(group => (
+			<SkillGroup skills={group.skills} name={group.group} key={group.group} />
+		))}
+		
+        <Typography variant="display2" gutterBottom >About the Site</Typography>
+        <Typography variant="body1" >
+			This site was built with React using the <a href="https://www.gatsbyjs.org/" >Gatsby</a> static site generator.
+			Material Design theming was made possible by the wonderful <a href="https://material-ui.com/" >Material-UI</a>.
+		</Typography>
+		
+    </TitledPage>
 )
 
 export default About;

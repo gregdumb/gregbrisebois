@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import MarkdownBody from '../components/MarkdownBody'
-import PageContent from '../components/PageContent'
+import Container from '../components/Container'
 
 export const query = graphql`
 	query ProjectQuery($slug: String!) {
@@ -9,7 +9,7 @@ export const query = graphql`
 			html
 			frontmatter {
 				title
-				date
+				date(formatString: "MMMM DD, YYYY")
 				tags
 			}
 		}
@@ -19,9 +19,9 @@ export const query = graphql`
 const Project = ({data}) => {
 	
 	return(
-		<PageContent>
+		<Container paddingTop paddingBottom >
 			<MarkdownBody markdownRemark={data.markdownRemark} />
-		</PageContent>
+		</Container>
 	);
 }
 
