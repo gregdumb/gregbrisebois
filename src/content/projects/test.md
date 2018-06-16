@@ -16,6 +16,18 @@ thumbnail: "/img/mountains.jpg"
 
 Paragraph
 
+Here's some code
+
+```jsx
+const List = ({ items }) => (
+	<ul>
+		{items.map(item => (
+			<ListItem item={item} />
+		))}
+	</ul>
+)
+```
+
 ## Well hello there
 
 I'm moving this site from Wordpress to Gatsby. Seems great so far.
