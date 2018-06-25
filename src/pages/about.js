@@ -39,7 +39,7 @@ const About = () => (
 		<Button
 			variant="outlined"
 			color="secondary"
-			style={{ margin: '24px 0', fontWeight: 600 }}
+			style={{ margin: '24px 0' }}
 			href="https://apps.gregbrisebois.com/downloads/gregbriseboisresume.pdf"
 			target="_blank" >
 			Download Résumé
