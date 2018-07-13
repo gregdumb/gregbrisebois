@@ -17,10 +17,10 @@ Final result:
 
 The editor provides a GUI to create simple shows where channels can be turned on and off in time with the music. The show data can be exported as JSON or as a simple list of timestamps and keyframes.
 
-You can [create your own show here](https://apps.gregbrisebois.com/show-editor/) or [view the source code](https://github.com/gregdumb/show-editor).
+You can [create your own show here](https://apps.gregbrisebois.com/show-editor/) or [view the source code](https://github.com/gregoryjjb/show-editor).
 
 ## Show Player
 
 The player runs on the Pi. It utilizes Python to read the show files, PHP to run the Python scripts, and a locally hosted web page to control the show. It also includes a copy of the show editor, so shows can be designed on the Pi without any importing/exporting.
 
-You can [view/download the source code here](https://github.com/gregdumb/show-server). See the readme for a guide on getting set up.
+You can [view/download the source code here](https://github.com/gregoryjjb/show-server). See the readme for a guide on getting set up.

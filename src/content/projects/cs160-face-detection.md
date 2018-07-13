@@ -46,4 +46,4 @@ All in all, I thought this project was a resounding success. It was one of the f
 
 I enjoyed Redux but found it to be overly verbose; currently I'm looking at [Undux](https://github.com/bcherny/undux).
 
-The source code for the [processing](https://github.com/gregdumb/cs160), [server](https://github.com/gregdumb/cs160-server), and [frontend](https://github.com/gregdumb/cs160-frontend) is all on GitHub.
+The source code for the [processing](https://github.com/gregoryjjb/cs160), [server](https://github.com/gregoryjjb/cs160-server), and [frontend](https://github.com/gregoryjjb/cs160-frontend) is all on GitHub.

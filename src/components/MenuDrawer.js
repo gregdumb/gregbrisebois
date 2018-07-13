@@ -125,7 +125,7 @@ const drawerContent = (c, classes) => (
 			<IconButton color="inherit" href="https://www.linkedin.com/in/gregbrisebois/" target="_blank" className={classes.iconButton} >
 				<LinkedinIcon />
 			</IconButton>
-			<IconButton color="inherit" href="https://github.com/gregdumb" target="_blank" className={classes.iconButton} >
+			<IconButton color="inherit" href="https://github.com/gregoryjjb" target="_blank" className={classes.iconButton} >
 				<GithubCircleIcon />
 			</IconButton>
 			<IconButton color="inherit" href="https://forums.unrealengine.com/member/179-gregdumb" target="_blank" className={classes.iconButton} >
