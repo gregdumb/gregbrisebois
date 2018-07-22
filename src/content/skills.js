@@ -13,6 +13,10 @@ export const skills = [{
 		image: "/img/logos/cplusplus-logo.svg",
 		padding: '5%',
 	}, {
+		name: "C#",
+		image: "/img/logos/csharp-logo.jpg",
+		padding: '1%',
+	}, {
 		name: "Java",
 		image: "/img/logos/java-logo.jpg",
 		padding: '5%',
@@ -90,6 +94,25 @@ export const skills = [{
 		name: "Blender",
 		image: "/img/logos/blender-logo.jpg",
 		padding: "10%"
+	}]
+}, {
+	group: "Tools",
+	skills: [{
+		name: "Git",
+		image: "/img/logos/git-logo.svg",
+		padding: "10%",
+	}, {
+		name: "VS Code",
+		image: "/img/logos/vscode-logo.jpg",
+		padding: "10%",
+	}, {
+		name: "Visual Studio",
+		image: "/img/logos/vs-logo.jpg",
+		padding: "10%",
+	}, {
+		name: "Jenkins",
+		image: "/img/logos/jenkins-logo.jpg",
+		padding: '5%',
 	}]
 }]
 
