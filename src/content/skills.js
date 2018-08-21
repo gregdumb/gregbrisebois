@@ -119,6 +119,6 @@ export const skills = [{
 export const experience = [{
 	company: "Analog Devices",
 	jobTitle: "Mixed Signal Intern",
-	dates: "July 2017 - Present",
-	description: "Worked on multiple projects, including: <ul><li>Web-bsaed design aid tools</li><li>Linduino (Arduino) driver development for ADI parts</li><li>Desktop .NET plugins for ACE testing platform</li></ul>",
+	dates: "July 2017 - August 2018",
+	description: "Worked on multiple projects, including: <ul><li>Web-based design aid tools</li><li>Linduino (Arduino) driver development for ADI parts</li><li>Desktop .NET plugins for ACE testing platform</li></ul>",
 }]
