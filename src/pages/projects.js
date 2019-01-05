@@ -2,8 +2,10 @@ import React from 'react'
 
 import Typography from '@material-ui/core/Typography'
 
+import Layout from '../components/Layout'
 import PostLinkList from '../components/PostLinkList'
 import TitledPage from '../components/TitledPage'
+import withRoot from '../withRoot';
 
 //sort: {fields: [frontmatter___date], order: DESC}
 
@@ -33,9 +35,11 @@ export const query = graphql`
 `;
 
 const Projects = ({ data }) => (
-	<TitledPage title="Projects" >
-		<PostLinkList nodes={data.allMarkdownRemark.edges.map(({node}) => node)} />
-	</TitledPage>
+	<Layout>
+		<TitledPage title="Projects" >
+			<PostLinkList nodes={data.allMarkdownRemark.edges.map(({node}) => node)} />
+		</TitledPage>
+	</Layout>
 )
 
-export default Projects;
+export default withRoot(Projects);

@@ -3,6 +3,19 @@ import { createMuiTheme, createGenerateClassName } from '@material-ui/core/style
 import purple from '@material-ui/core/colors/purple';
 import theme from './theme'
 
+//const theme = createMuiTheme({
+//	palette: {
+//		primary: {
+//			main: '#FF0000',
+//		},
+//		secondary: {
+//			main: '#00FF00',
+//		},
+//	}
+//})
+
+console.log('THE THEME BETTER BE', theme);
+
 function createPageContext() {
 	return {
 		theme,

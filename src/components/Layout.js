@@ -9,9 +9,13 @@ import Footer from '../components/Footer'
 import MenuDrawer from '../components/MenuDrawer'
 import PageArea from '../components/PageArea'
 
-require('typeface-bitter')
-require('typeface-roboto')
-require("prismjs/themes/prism-tomorrow.css")
+//require('typeface-bitter')
+//require('typeface-roboto')
+//require("prismjs/themes/prism-tomorrow.css")
+
+import 'typeface-bitter';
+import 'typeface-roboto';
+import "prismjs/themes/prism-tomorrow.css";
 
 import { withStyles } from '@material-ui/core';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
@@ -72,7 +76,15 @@ class TemplateWrapper extends React.Component {
 	}
 
 	render() {
-		let {data, children, classes} = this.props;
+        let {/*data,*/ children, classes} = this.props;
+        
+        let data = {
+            site: {
+                siteMetadata: {
+                    title: 'Greg Brisebois',
+                }
+            }
+        };
 		
 		let metaTags = [
 			{ name: 'description', content: 'Personal site of Greg Brisebois' },
@@ -96,7 +108,7 @@ class TemplateWrapper extends React.Component {
 					/>
 					<MenuDrawer className={classes.grow} isOpen={this.state.menuOpen} onOpen={this.openDrawer} onClose={this.onDrawerClose} />
 					<PageArea >
-						{children()}
+						{children}
 					</PageArea>
 				</div>
 		)
@@ -108,4 +120,4 @@ TemplateWrapper.propTypes = {
 	data: PropTypes.object,
 }
 
-export default withRoot(withStyles(styles)(TemplateWrapper));
+export default withStyles(styles)(TemplateWrapper);

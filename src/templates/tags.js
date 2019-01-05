@@ -4,6 +4,8 @@ import Link from "gatsby-link"
 
 import TitledPage from '../components/TitledPage'
 import PostLinkList from '../components/PostLinkList'
+import withRoot from "../withRoot";
+import Layout from "../components/Layout";
 
 const Tags = ({ pathContext, data }) => {
 	const { tag } = pathContext;
@@ -13,9 +15,11 @@ const Tags = ({ pathContext, data }) => {
 	} tagged with "${tag}"`;
 	
 	return (
-		<TitledPage title={tagHeader} >
-			<PostLinkList nodes={edges.map(({ node }) => node)} />
-		</TitledPage>
+		<Layout>
+			<TitledPage title={tagHeader} >
+				<PostLinkList nodes={edges.map(({ node }) => node)} />
+			</TitledPage>
+		</Layout>
 	);
 };
 
@@ -40,7 +44,7 @@ Tags.propTypes = {
 	}),
 };
 
-export default Tags;
+export default withRoot(Tags);
 
 export const pageQuery = graphql`
 query TagPage($tag: String) {

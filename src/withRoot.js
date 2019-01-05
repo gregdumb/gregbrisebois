@@ -2,43 +2,50 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import JssProvider from 'react-jss/lib/JssProvider';
 import getPageContext from './getPageContext';
 
 function withRoot(Component) {
 	class WithRoot extends React.Component {
 		constructor(props) {
 			super(props);
+			
+			console.log('ALL PROPS', this.props)
 
-			this.pageContext = this.props.pageContext || getPageContext();
+			this.muiPageContext = getPageContext();
+			
+			console.log('HERE IS THE PAGE CONTEXT', this.muiPageContext);
 		}
 
 		componentDidMount() {
 			// Remove the server-side injected CSS.
-			const jssStyles = document.querySelector('#server-side-jss');
+			const jssStyles = document.querySelector('#jss-server-side');
 			if (jssStyles && jssStyles.parentNode) {
 				jssStyles.parentNode.removeChild(jssStyles);
 			}
 		}
 
-		pageContext = null;
+		//muiPageContext = null;
 
 		render() {
 			// MuiThemeProvider makes the theme available down the React tree thanks to React context.
 			return (
-				<MuiThemeProvider
-					theme={this.pageContext.theme}
-					sheetsManager={this.pageContext.sheetsManager}
-				>
-					{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-					<CssBaseline />
-					<Component {...this.props} />
-				</MuiThemeProvider>
+				<JssProvider generateClassName={this.muiPageContext.generateClassName}>
+					<MuiThemeProvider
+						theme={this.muiPageContext.theme}
+						sheetsManager={this.muiPageContext.sheetsManager}
+					>
+						{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+						<CssBaseline />
+						<Component {...this.props} />
+					</MuiThemeProvider>
+				</JssProvider>
 			);
 		}
 	}
 
 	WithRoot.propTypes = {
-		pageContext: PropTypes.object,
+		muiPageContext: PropTypes.object,
 	};
 
 	return WithRoot;

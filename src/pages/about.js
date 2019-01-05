@@ -12,6 +12,8 @@ import TitledPage from '../components/TitledPage'
 import Experience from '../components/Experience'
 
 import { skills, experience } from '../content/skills'
+import Layout from '../components/Layout';
+import withRoot from '../withRoot';
 
 const SkillGroup = ({ skills, name }) => (
 	<div style={{marginBottom: 32}} >
@@ -34,39 +36,41 @@ const SkillGroup = ({ skills, name }) => (
 )
 
 const About = () => (
-    <TitledPage title="About Me" >
-	
-		<Button
-			variant="outlined"
-			color="secondary"
-			style={{ margin: '24px 0' }}
-			href="https://apps.gregbrisebois.com/downloads/gregbriseboisresume.pdf"
-			target="_blank" >
-			Download Résumé
-		</Button>
+	<Layout>
+		<TitledPage title="About Me" >
+		
+			<Button
+				variant="outlined"
+				color="secondary"
+				style={{ margin: '24px 0' }}
+				href="https://apps.gregbrisebois.com/downloads/gregbriseboisresume.pdf"
+				target="_blank" >
+				Download Résumé
+			</Button>
+				
+			<Typography variant="display2" gutterBottom >Experience</Typography>
 			
-        <Typography variant="display2" gutterBottom >Experience</Typography>
-        
-		<Grid container spacing={24} style={{ marginBottom: 32 }} >
-			{experience.map(e => (
-				<Grid item md={12} key={e.company} >
-					<Experience experience={e} />
-				</Grid>
+			<Grid container spacing={24} style={{ marginBottom: 32 }} >
+				{experience.map(e => (
+					<Grid item md={12} key={e.company} >
+						<Experience experience={e} />
+					</Grid>
+				))}
+			</Grid>
+			
+			<Typography variant="display2" gutterBottom >Skills</Typography>
+			{skills.map(group => (
+				<SkillGroup skills={group.skills} name={group.group} key={group.group} />
 			))}
-		</Grid>
-		
-        <Typography variant="display2" gutterBottom >Skills</Typography>
-		{skills.map(group => (
-			<SkillGroup skills={group.skills} name={group.group} key={group.group} />
-		))}
-		
-        <Typography variant="display2" gutterBottom >About the Site</Typography>
-        <Typography variant="body1" >
-			This site was built with React using the <a href="https://www.gatsbyjs.org/" >Gatsby</a> static site generator.
-			Material Design theming was made possible by the wonderful <a href="https://material-ui.com/" >Material-UI</a>.
-		</Typography>
-		
-    </TitledPage>
+			
+			<Typography variant="display2" gutterBottom >About the Site</Typography>
+			<Typography variant="body1" >
+				This site was built with React using the <a href="https://www.gatsbyjs.org/" >Gatsby</a> static site generator.
+				Material Design theming was made possible by the wonderful <a href="https://material-ui.com/" >Material-UI</a>.
+			</Typography>
+			
+		</TitledPage>
+	</Layout>
 )
 
-export default About;
+export default withRoot(About);

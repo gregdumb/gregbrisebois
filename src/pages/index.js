@@ -12,27 +12,36 @@ import CodeIcon from '@material-ui/icons/Code';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import ShortcutCard from '../components/ShortcutCard'
+import Layout from '../components/Layout';
+import withRoot from '../withRoot';
 
-const styles = theme => ({
-	header: {
-		background: theme.palette.primary.light,
-		color: 'white',
-		height: '300px',
-		boxSizing: 'border-box',
-		display: 'flex',
-		alignItems: 'center',
-		[theme.breakpoints.down('xs')]: {
-			//alignItems: 'baseline'
+const styles = theme => {
+	
+	console.log('THE THEME IS', JSON.stringify(theme.palette.primary));
+	console.log('POINTER IS', theme.palette.primary);
+	console.log('WHOLE POINTER IS', theme);
+	
+	return {
+		header: {
+			background: theme.palette.primary.light,
+			color: 'white',
+			height: '300px',
+			boxSizing: 'border-box',
+			display: 'flex',
+			alignItems: 'center',
+			[theme.breakpoints.down('xs')]: {
+				//alignItems: 'baseline'
+			}
+		},
+		codeText: {
+			color: 'white',
+			fontSize: '4rem',
 		}
-	},
-	codeText: {
-		color: 'white',
-		fontSize: '4rem',
 	}
-})
+}
 
 const IndexPage = ({ classes }) => (
-	<div>
+	<Layout>
 		<header className={classes.header} >
 			<Container>
 				<Typography variant="display4" className={classes.codeText} >
@@ -64,7 +73,7 @@ const IndexPage = ({ classes }) => (
 				</Grid>
 			</Container>
 		</div>
-  	</div>
+  	</Layout>
 )
 
-export default withStyles(styles)(IndexPage);
+export default withRoot(withStyles(styles)(IndexPage));

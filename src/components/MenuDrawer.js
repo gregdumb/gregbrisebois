@@ -42,6 +42,7 @@ const styles = theme => ({
 	fixed: {
 		position: 'fixed',
 		width: drawerWidth,
+		height: '100%',
 	},
 	toolbar: {
 		...theme.mixins.toolbar,
@@ -82,6 +83,12 @@ const styles = theme => ({
 		backgroundColor: theme.palette.background.default,
 		padding: theme.spacing.unit * 3,
 	},
+	listItemGutters: {
+		...theme.mixins.gutters({
+			paddingTop: 12,
+			paddingBottom: 12,
+		})
+	}
 });
 
 const links = [{
@@ -102,9 +109,11 @@ const links = [{
 	icon: <AccountCircleIcon />,
 }];
 
-const DrawerLink = ({ name, to, icon, onClick }) => (
+const DrawerLink = ({ name, to, icon, onClick, classes }) => (
 	<UnstyledLink to={to} >
-		<ListItem button onClick={onClick} >
+		<ListItem button onClick={onClick} classes={{
+			gutters: classes.listItemGutters,
+		}} >
 			<ListItemIcon>
 				{icon}
 			</ListItemIcon>
@@ -117,7 +126,7 @@ const drawerContent = (c, classes) => (
 	<div className={classes.drawerContent} >
 		<List style={{ flex: 1 }} >
 			{links.map(l => (
-				<DrawerLink onClick={c} key={l.name} name={l.name} to={l.to} icon={l.icon} />
+				<DrawerLink onClick={c} key={l.name} name={l.name} to={l.to} icon={l.icon} classes={classes} />
 			))}
 		</List>
 		<Divider />
@@ -143,7 +152,11 @@ const MenuDrawer = ({ classes, isOpen, onOpen, onClose }) => (
 		<Hidden mdDown implementation='css' >
 			<div className={classes.root} >
 				<div className={classes.fixed} >
-					<Drawer variant='permanent' open classes={{ paper: classes.drawerPaper }} >
+					<Drawer
+						variant='permanent'
+						open
+						classes={{ paper: classes.drawerPaper }}
+						style={{ height: '100%' }} >
 						<div className={classes.toolbar} />
 						{drawerContent(onClose, classes)}
 					</Drawer>

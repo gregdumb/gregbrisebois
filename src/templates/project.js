@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 import MarkdownBody from '../components/MarkdownBody'
 import Container from '../components/Container'
+import Layout from '../components/Layout';
+import withRoot from '../withRoot';
 
 export const query = graphql`
 	query ProjectQuery($slug: String!) {
@@ -19,10 +21,12 @@ export const query = graphql`
 const Project = ({data}) => {
 	
 	return(
-		<Container paddingTop paddingBottom >
-			<MarkdownBody markdownRemark={data.markdownRemark} />
-		</Container>
+		<Layout>
+			<Container paddingTop paddingBottom >
+				<MarkdownBody markdownRemark={data.markdownRemark} />
+			</Container>
+		</Layout>
 	);
 }
 
-export default Project;
+export default withRoot(Project);

@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography'
 import EmoticonSadIcon from 'mdi-material-ui/EmoticonSad'
 
 import Container from '../components/Container'
+import Layout from '../components/Layout';
+import withRoot from '../withRoot';
 
 const styles = theme => ({
 	root: {
@@ -22,15 +24,17 @@ const styles = theme => ({
 })
 
 const NotFoundPage = ({ classes }) => (
-	<div className={classes.root} >
-		<Container paddingTop >
-			<Typography variant="display4" gutterBottom className={classes.title} >404</Typography>
-			<Typography variant="headline" gutterBottom >Not found</Typography>
-			<Typography variant="body2" gutterBottom >The requested page is not available on the server.</Typography>
-			
-			<EmoticonSadIcon className={classes.sadFace} />
-		</Container>
-	</div>
+	<Layout>
+		<div className={classes.root} >
+			<Container paddingTop >
+				<Typography variant="display4" gutterBottom className={classes.title} >404</Typography>
+				<Typography variant="headline" gutterBottom >Not found</Typography>
+				<Typography variant="body2" gutterBottom >The requested page is not available on the server.</Typography>
+				
+				<EmoticonSadIcon className={classes.sadFace} />
+			</Container>
+		</div>
+	</Layout>
 )
 
-export default withStyles(styles)(NotFoundPage);
+export default withRoot(withStyles(styles)(NotFoundPage));

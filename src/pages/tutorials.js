@@ -4,6 +4,8 @@ import Typography from '@material-ui/core/Typography'
 
 import TitledPage from '../components/TitledPage'
 import PostLinkList from '../components/PostLinkList'
+import Layout from '../components/Layout';
+import withRoot from '../withRoot';
 
 export const query = graphql`
 	query TutorialsQuery {
@@ -31,9 +33,11 @@ export const query = graphql`
 `;
 
 const Tutorials = ({ data }) => (
-	<TitledPage title={"Tutorials"} >
-		<PostLinkList nodes={data.allMarkdownRemark.edges.map(({node}) => node)} />
-	</TitledPage>
+	<Layout>
+		<TitledPage title={"Tutorials"} >
+			<PostLinkList nodes={data.allMarkdownRemark.edges.map(({node}) => node)} />
+		</TitledPage>
+	</Layout>
 )
 
-export default Tutorials;
+export default withRoot(Tutorials);
