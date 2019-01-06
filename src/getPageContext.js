@@ -1,6 +1,5 @@
 import { SheetsRegistry } from 'jss';
-import { createMuiTheme, createGenerateClassName } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
+import { createGenerateClassName } from '@material-ui/core/styles';
 import theme from './theme'
 
 //const theme = createMuiTheme({
@@ -13,8 +12,6 @@ import theme from './theme'
 //		},
 //	}
 //})
-
-console.log('THE THEME BETTER BE', theme);
 
 function createPageContext() {
 	return {

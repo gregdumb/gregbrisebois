@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import MarkdownBody from '../components/MarkdownBody'
 import Container from '../components/Container'
 import Layout from '../components/Layout';

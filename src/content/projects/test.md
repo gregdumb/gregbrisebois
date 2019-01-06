@@ -1,7 +1,7 @@
 ---
 title: Gatsby+React Website Conversion
 date: "2018-03-20"
-thumbnail: "/img/mountains.jpg"
+image: "../img/mountains.jpg"
 ---
 
 # Header 1

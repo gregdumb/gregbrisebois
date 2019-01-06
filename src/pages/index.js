@@ -1,8 +1,7 @@
 import React from 'react'
-import Link from 'gatsby-link'
+
 import Container from '../components/Container'
 import Typer from '../components/Typer'
-import { colors, media } from '../theme'
 
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'

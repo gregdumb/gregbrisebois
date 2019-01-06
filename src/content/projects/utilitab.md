@@ -1,8 +1,8 @@
 ---
 title: UtiliTab - New Tab Chrome Extension
 date: "2018-04-22"
-tags: ["web dev", "chrome", "download"]
-thumbnail: "/img/utilitab-screenshot.jpg"
+tags: ["web", "chrome", "download"]
+image: "../img/utilitab-screenshot.jpg"
 ---
 
 I was underwhelmed with the existing offering of new tab extensions on the Chrome web store.

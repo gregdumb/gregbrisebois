@@ -9,12 +9,7 @@ function withRoot(Component) {
 	class WithRoot extends React.Component {
 		constructor(props) {
 			super(props);
-			
-			console.log('ALL PROPS', this.props)
-
 			this.muiPageContext = getPageContext();
-			
-			console.log('HERE IS THE PAGE CONTEXT', this.muiPageContext);
 		}
 
 		componentDidMount() {
@@ -24,8 +19,6 @@ function withRoot(Component) {
 				jssStyles.parentNode.removeChild(jssStyles);
 			}
 		}
-
-		//muiPageContext = null;
 
 		render() {
 			// MuiThemeProvider makes the theme available down the React tree thanks to React context.

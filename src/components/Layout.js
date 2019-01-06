@@ -2,23 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import withRoot from '../withRoot'
-
 import Header from '../components/Header'
-import Footer from '../components/Footer'
 import MenuDrawer from '../components/MenuDrawer'
 import PageArea from '../components/PageArea'
-
-//require('typeface-bitter')
-//require('typeface-roboto')
-//require("prismjs/themes/prism-tomorrow.css")
 
 import 'typeface-bitter';
 import 'typeface-roboto';
 import "prismjs/themes/prism-tomorrow.css";
 
 import { withStyles } from '@material-ui/core';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 export const query = graphql`
 	query LayoutQuery {

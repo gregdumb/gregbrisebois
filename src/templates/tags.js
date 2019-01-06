@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Link from "gatsby-link"
 
 import TitledPage from '../components/TitledPage'
 import PostLinkList from '../components/PostLinkList'
@@ -60,7 +59,14 @@ query TagPage($tag: String) {
 					date
 					title
 					tags
-					thumbnail
+					image {
+						childImageSharp {
+							fluid(maxWidth:400) {
+								src
+								base64
+							}
+						}
+					}
 				}
 				fields {
 					slug

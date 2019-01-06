@@ -1,8 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Container from '../components/Container'
 import Tags from '../components/Tags'
-import { media } from '../theme'
 import styled from 'styled-components'
 
 import { withStyles } from '@material-ui/core/styles'

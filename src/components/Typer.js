@@ -1,8 +1,7 @@
 import React from 'react'
 import Typed from 'typed.js'
-import { injectGlobal, keyframes } from 'styled-components'
 
-import { withStyle, withStyles } from '@material-ui/core/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
 	'@global': {

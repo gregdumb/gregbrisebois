@@ -1,5 +1,4 @@
 import React from 'react'
-import Container from '../components/Container'
 
 const PageContent = ({ children }) => (
 	<div style={{

@@ -1,7 +1,8 @@
 ---
 title: CS160 Class Project - Face Detection
 date: "2018-05-24"
-tags: ["server", "frontend", "video", "web dev", "class project"]
+tags: ["server", "frontend", "video", "web", "class project"]
+image: "../img/cscvop.png"
 ---
 
 For my Software Engineering class project, I along with 3 other people was tasked with creating a web service that accepted video uploads, ran a face detection neural network on them, and drew delaunay triangles on the face. I was responsible for the server routing, database, and front end.

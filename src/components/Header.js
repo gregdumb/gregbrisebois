@@ -4,12 +4,10 @@ import PropTypes from 'prop-types'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { withStyles } from '@material-ui/core/styles';
 
-import Container from './Container'
 import UnstyledLink from './UnstyledLink'
 
 const styles = theme => ({

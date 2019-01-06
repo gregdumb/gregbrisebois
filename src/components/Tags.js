@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import _ from 'lodash'
 
 import { withStyles } from '@material-ui/core/styles'

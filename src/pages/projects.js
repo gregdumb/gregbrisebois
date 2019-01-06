@@ -1,7 +1,5 @@
 import React from 'react'
 
-import Typography from '@material-ui/core/Typography'
-
 import Layout from '../components/Layout'
 import PostLinkList from '../components/PostLinkList'
 import TitledPage from '../components/TitledPage'
@@ -21,7 +19,14 @@ export const query = graphql`
 				  		title
 						date
 						tags
-						thumbnail
+						image {
+							childImageSharp {
+								fluid(maxWidth:400) {
+									src
+									base64
+								}
+							}
+						}
 					}
 					fields {
 						slug

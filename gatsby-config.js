@@ -62,14 +62,7 @@ module.exports = {
 				}
 			}
 		},
-		//{
-		//	resolve: 'gatsby-plugin-material-ui',
-		//	options: {
-		//		pathToTheme: 'src/theme',
-		//	}
-		//},
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',
-		//'gatsby-plugin-react-next',
 	],
 };

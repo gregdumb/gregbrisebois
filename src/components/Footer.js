@@ -5,12 +5,6 @@ import Typography from '@material-ui/core/Typography'
 
 import Container from './Container'
 
-const FooterLink = ({ href, icon }) => (
-	<a href={href} style={{color: 'white'}} >
-		<i style={{fontSize: '1.5em', marginLeft: '0.5em'}} className={"fab fa-" + icon} />
-	</a>
-)
-
 const styles = theme => ({
 	root: {
 		background: theme.palette.primary.light,

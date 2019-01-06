@@ -4,6 +4,8 @@ date: "2018-03-21"
 tags: ["web", "html", "tutorial"]
 ---
 
+This is a test of Gatsby's markdown rendering.
+
 ## The web is complicated
 
 But learning it doesn't have to be. Instead of jumping into all the crazy modern stuff, let's start out with the basics.
