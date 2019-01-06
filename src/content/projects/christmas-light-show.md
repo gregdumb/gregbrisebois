@@ -3,6 +3,8 @@ title: Christmas Light Show
 date: "2017-12-01"
 tags: ["raspberry pi", "frontend", "web"]
 image: "../img/showeditor.png"
+featured: true
+summary: Light show synced to music, running on a Raspberry Pi with a self-hosted web control interface and show editor
 ---
 
 The show runs on a Raspberry Pi and utilizes 8 channels. The project consisted of two parts: an editor to create the shows, and a player.

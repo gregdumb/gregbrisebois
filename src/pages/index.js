@@ -13,6 +13,9 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ShortcutCard from '../components/ShortcutCard'
 import Layout from '../components/Layout';
 import withRoot from '../withRoot';
+import Portfolio from '../components/Portfolio';
+
+
 
 const styles = theme => {
 	
@@ -63,13 +66,14 @@ const IndexPage = ({ classes }) => (
 		</header>
 		<div>
 			<Container paddingTop >
-				<Typography variant="display2" gutterBottom >I'm a computer scientist based in San Jose, CA.</Typography>
-				<Typography variant="subheading" gutterBottom >This site serves as my public profile and hosting space for my projects.</Typography>
-				<Grid container spacing={24} style={{ marginTop: 32 }} >
+				<Typography variant="h4" gutterBottom >I'm a computer scientist based in San Jose, CA.</Typography>
+				<Typography variant="subtitle1" gutterBottom >This site serves as my public profile and hosting space for my projects.</Typography>
+				{/*<Grid container spacing={24} style={{ marginTop: 32 }} >
 					<ShortcutCard title="Tutorials" to="/tutorials" icon={<HelpIcon />} />
 					<ShortcutCard title="Projects" to="/projects" icon={<CodeIcon />} />
 					<ShortcutCard title="About" to="/about" icon={<AccountCircleIcon />} />
-				</Grid>
+				</Grid>*/}
+				<Portfolio />
 			</Container>
 		</div>
   	</Layout>

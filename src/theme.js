@@ -6,6 +6,7 @@ const constants = {
 		//color: '#222',
 	},
 	palette: {
+		type: 'light',
 		primary: {
 			light: '#819ca9',
 			main: '#546e7a',
@@ -40,24 +41,31 @@ const theme = createMuiTheme({
 	typography: {
 		fontSize: 16,
 		
+		h6: { ...constants.headers },
+		h5: { ...constants.headers },
+		h4: { ...constants.headers },
+		h3: { ...constants.headers },
+		h2: { ...constants.headers },
+		h1: { ...constants.headers },
+		
 		display4: {
 			...constants.headers,
-			fontSize: '3rem',
+			//fontSize: '3rem',
 		},
 		
 		display3: {
 			...constants.headers,
-			fontSize: '2.6rem',
+			//fontSize: '2.6rem',
 		},
 		
 		display2: {
 			...constants.headers,
-			fontSize: '2.3rem',
+			//fontSize: '2.3rem',
 		},
 		
 		display1: {
 			...constants.headers,
-			fontSize: '2rem',
+			//fontSize: '2rem',
 		},
 		
 		headline: {
