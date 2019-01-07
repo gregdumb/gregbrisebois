@@ -20,25 +20,41 @@ const styles = theme => ({
 	},
 })
 
-const Experience = ({ classes, experience }) => (
-	<Card className={classes.root}>
-		<CardContent>
-			<Typography gutterBottom>
-				<Typography variant="h5" component="span" className={classes.title} >
-					{experience.company}
-				</Typography>
-				
-				<Typography variant="subtitle1" component="span" className={classes.title} >
-					{" • " + experience.jobTitle}
-				</Typography>
-			</Typography>
-			
-			<Typography variant="body2" color="textSecondary" gutterBottom >{experience.dates}</Typography>
-			
-			<Typography variant="body1" dangerouslySetInnerHTML={{__html: experience.description}} ></Typography>
-		</CardContent>
-	</Card>
-)
+class Experience extends React.Component {
+	state = {
+		html: '',
+	}
+	
+	componentDidMount() {
+		this.setState({
+			html: this.props.experience.description,
+		});
+	}
+	
+	render() {
+		const { classes, experience } = this.props;
+		
+		return(
+			<Card className={classes.root}>
+				<CardContent>
+					<Typography gutterBottom>
+						<Typography variant="h5" component="span" className={classes.title} >
+							{experience.company}
+						</Typography>
+						
+						<Typography variant="subtitle1" component="span" className={classes.title} >
+							{" • " + experience.jobTitle}
+						</Typography>
+					</Typography>
+					
+					<Typography variant="body2" color="textSecondary" gutterBottom >{experience.dates}</Typography>
+					
+					<Typography variant="body1" dangerouslySetInnerHTML={{__html: this.state.html}} ></Typography>
+				</CardContent>
+			</Card>
+		)
+	}
+}
 
 Experience.propTypes = {
 	experience: PropTypes.shape({
