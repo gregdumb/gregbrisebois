@@ -12,7 +12,7 @@ const styles = theme => ({
 const TitledPage = ({ classes, children, title }) => (
 	<Container paddingTop paddingBottom >
 		<Helmet title={`${title} - Greg Brisebois`} />
-		<Typography variant="display4" gutterBottom >{title}</Typography>
+		<Typography variant="h1" gutterBottom >{title}</Typography>
 		{children}
 	</Container>
 )

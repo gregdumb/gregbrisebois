@@ -26,8 +26,8 @@ const NotFoundPage = ({ classes }) => (
 	<Layout>
 		<div className={classes.root} >
 			<Container paddingTop >
-				<Typography variant="display4" gutterBottom className={classes.title} >404</Typography>
-				<Typography variant="headline" gutterBottom >Not found</Typography>
+				<Typography variant="h1" gutterBottom className={classes.title} >404</Typography>
+				<Typography variant="h6" gutterBottom >Not found</Typography>
 				<Typography variant="body2" gutterBottom >The requested page is not available on the server.</Typography>
 				
 				<EmoticonSadIcon className={classes.sadFace} />

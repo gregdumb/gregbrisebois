@@ -16,7 +16,7 @@ import withRoot from '../withRoot';
 
 const SkillGroup = ({ skills, name }) => (
 	<div style={{marginBottom: 32}} >
-		<Typography variant="title" gutterBottom>{name}</Typography>
+		<Typography variant="h6" gutterBottom>{name}</Typography>
 		<Grid container spacing={24} >
 			{skills.map(skill => (
 				<Grid item xs={4} sm={3} md={2} lg={2} key={skill.name} >
@@ -47,7 +47,7 @@ const About = () => (
 				Download Résumé
 			</Button>
 				
-			<Typography variant="display2" gutterBottom >Experience</Typography>
+			<Typography variant="h3" gutterBottom >Experience</Typography>
 			
 			<Grid container spacing={24} style={{ marginBottom: 32 }} >
 				{experience.map(e => (
@@ -57,12 +57,12 @@ const About = () => (
 				))}
 			</Grid>
 			
-			<Typography variant="display2" gutterBottom >Skills</Typography>
+			<Typography variant="h3" gutterBottom >Skills</Typography>
 			{skills.map(group => (
 				<SkillGroup skills={group.skills} name={group.group} key={group.group} />
 			))}
 			
-			<Typography variant="display2" gutterBottom >About the Site</Typography>
+			<Typography variant="h3" gutterBottom >About the Site</Typography>
 			<Typography variant="body1" >
 				This site was built with React using the <a href="https://www.gatsbyjs.org/" >Gatsby</a> static site generator.
 				Material Design theming was made possible by the wonderful <a href="https://material-ui.com/" >Material-UI</a>.

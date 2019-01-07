@@ -35,7 +35,7 @@ const PostLink = ({ classes, node }) => (
 				</div>
 			}
 			<CardContent >
-				<Typography variant="title" gutterBottom >{node.frontmatter.title}</Typography>
+				<Typography variant="h6" gutterBottom >{node.frontmatter.title}</Typography>
 				<Typography variant="body1">{node.excerpt}</Typography>
 			</CardContent>
 		</Card>

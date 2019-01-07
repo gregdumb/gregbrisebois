@@ -40,13 +40,14 @@ const theme = createMuiTheme({
 	
 	typography: {
 		fontSize: 16,
+		useNextVariants: true,
 		
-		h6: { ...constants.headers },
-		h5: { ...constants.headers },
+		h1: { ...constants.headers, fontSize: '4.5rem', },
+		h2: { ...constants.headers, fontSize: '3.7rem', },
+		h3: { ...constants.headers, fontSize: '3.2rem', },
 		h4: { ...constants.headers },
-		h3: { ...constants.headers },
-		h2: { ...constants.headers },
-		h1: { ...constants.headers },
+		h5: { ...constants.headers },
+		h6: { ...constants.headers },
 		
 		display4: {
 			...constants.headers,

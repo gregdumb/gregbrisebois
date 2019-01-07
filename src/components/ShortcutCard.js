@@ -24,7 +24,7 @@ const ShortcutCard = ({ classes, title, to, icon }) => (
 		<UnstyledLink to={to} >
 			<Paper className={classes.paper}>
 				{icon}
-				<Typography variant="headline" className={classes.title} >{title}</Typography>
+				<Typography variant="h5" className={classes.title} >{title}</Typography>
 			</Paper>
 		</UnstyledLink>
 	</Grid>

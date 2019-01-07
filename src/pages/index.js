@@ -46,7 +46,7 @@ const IndexPage = ({ classes }) => (
 	<Layout>
 		<header className={classes.header} >
 			<Container>
-				<Typography variant="display4" className={classes.codeText} >
+				<Typography variant="h3" className={classes.codeText} >
 					{"> "}
 					<Typer options={{
 						strings: [

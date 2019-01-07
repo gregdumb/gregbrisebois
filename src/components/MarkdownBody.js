@@ -17,19 +17,22 @@ const Markdown = styled.section`
 const styles = theme => ({
 	md: {
 		'& h1': {
-			...theme.typography.display3,
+			...theme.typography.h1,
 		},
 		'& h2': {
-			...theme.typography.display2,
+			...theme.typography.h2,
 		},
 		'& h3': {
-			...theme.typography.display1,
+			...theme.typography.h3,
 		},
 		'& h4': {
-			...theme.typography.headline,
+			...theme.typography.h4,
 		},
 		'& h5': {
-			...theme.typography.title,
+			...theme.typography.h5,
+		},
+		'& h6': {
+			...theme.typography.h6,
 		},
 		
 		'& p': {
@@ -63,9 +66,9 @@ const MarkdownBody = ({ classes, markdownRemark }) => (
 	<div >
 		<Helmet title={`${markdownRemark.frontmatter.title} - Greg Brisebois`} />
 		
-		<Typography variant="subheading" gutterBottom color="textSecondary" >{markdownRemark.frontmatter.date}</Typography>
+		<Typography variant="subtitle1" gutterBottom color="textSecondary" >{markdownRemark.frontmatter.date}</Typography>
 		
-		<Typography variant="display4" gutterBottom >{markdownRemark.frontmatter.title}</Typography>
+		<Typography variant="h1" gutterBottom >{markdownRemark.frontmatter.title}</Typography>
 		
 		<Tags tags={markdownRemark.frontmatter.tags} />
 		

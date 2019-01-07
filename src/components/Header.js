@@ -35,8 +35,8 @@ const Header = ({ classes, headerTitle, toggleDropDown, closeDropDown, dropDownV
 				<IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={openDrawerClicked} >
 					<MenuIcon />
 				</IconButton>
-				<Typography className={classes.title} variant="headline" color="inherit" >
-					<UnstyledLink>
+				<Typography className={classes.title} variant="h5" color="inherit" >
+					<UnstyledLink to='/'>
 						Greg Brisebois
 					</UnstyledLink>
 				</Typography>
