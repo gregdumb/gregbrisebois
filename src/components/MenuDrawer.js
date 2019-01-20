@@ -16,6 +16,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import HelpIcon from '@material-ui/icons/Help';
 import CodeIcon from '@material-ui/icons/Code';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ChatIcon from '@material-ui/icons/Chat';
 import CloseIcon from '@material-ui/icons/Close';
 import GithubCircleIcon from 'mdi-material-ui/GithubCircle';
 import LinkedinIcon from 'mdi-material-ui/Linkedin';
@@ -102,6 +103,10 @@ const links = [{
 	name: "About",
 	to: '/about',
 	icon: <AccountCircleIcon />,
+}, {
+	name: "Contact",
+	to: '/contact',
+	icon: <ChatIcon />,
 }];
 
 const DrawerLink = ({ name, to, icon, onClick, classes }) => (
