@@ -10,6 +10,9 @@ const styles = theme => ({
     input: {
         width: '100%',
     },
+    hidden: {
+        display: 'none',
+    },
     send: {
         marginLeft: 8,
     }
@@ -79,8 +82,12 @@ class ContactForm extends React.Component {
                 className={props.classes.root} action="/contact/submitted"
                 name="contact"
                 method="POST"
-                data-netlify="true" >
+                data-netlify="true"
+                netlify-honeypot="birthday" >
                 <input type="hidden" name="form-name" value="contact" />
+                <span className={classes.hidden}>
+                    <input type="date" name="birthday" />
+                </span>
                 <Grid container spacing={16}>
                     <Grid item md={4} sm={6} xs={12} >
                         <TextField
