@@ -35,7 +35,7 @@ The solution was RTSP streaming. Dean set up the processing to accept an RTSP UR
 * Node receives video stream, pipes it to FFMPEG
 * FFMPEG serves it with [this handy RTSP server](https://github.com/revmischa/rtsp-server) at a randomized local address
 * Node fires up the processing application and sends the created RTSP address to it
-* The processing outputs the video stream (with triagles drawn) to STDOUT
+* The processing outputs the video stream (with triangles drawn) to STDOUT
 * Node grabs that STDOUT, creates a reverse stream back down to the client through the socket, and sends the video
 * The client receives the stream with the video and injects it into an HTML5 video player using [this handy-dandy library](https://github.com/feross/mediasource)
 
