@@ -45,6 +45,16 @@ module.exports = {
 			}
 		},
 		{
+			resolve: 'gatsby-plugin-manifest',
+			options: {
+				name: 'Greg Brisebois',
+				short_name: 'G. Brisebois',
+				start_url: '/',
+				background_color: '#fafafa',
+				theme_color: '#546e7a',
+			}
+		},
+		{
 			resolve: `gatsby-plugin-favicon`,
 			options: {
 				logo: "./src/favicon.png",
