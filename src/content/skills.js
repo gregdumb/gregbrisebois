@@ -35,6 +35,9 @@ export const skills = [{
 		image: "/img/logos/redux-logo.jpg",
 		padding: '10%',
 	}, {
+		name: "Webpack",
+		image: "/img/logos/webpack-logo.jpg",
+	}, {
 		name: "Gatsby",
 		image: "/img/logos/gatsby-logo.jpg",
 		padding: '10%',
@@ -108,6 +111,10 @@ export const skills = [{
 	}, {
 		name: "Visual Studio",
 		image: "/img/logos/vs-logo.jpg",
+		padding: "10%",
+	}, {
+		name: "Travis",
+		image: "/img/logos/travis-logo.jpg",
 		padding: "10%",
 	}, {
 		name: "Jenkins",
