@@ -18,10 +18,11 @@ import CodeIcon from '@material-ui/icons/Code';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ChatIcon from '@material-ui/icons/Chat';
 import CloseIcon from '@material-ui/icons/Close';
+
 import GithubCircleIcon from 'mdi-material-ui/GithubCircle';
 import LinkedinIcon from 'mdi-material-ui/Linkedin';
 import UnrealIcon from 'mdi-material-ui/Unreal'
-import MailOutlineIcon from '@material-ui/icons/MailOutline'
+import NpmVariantOutlineIcon from 'mdi-material-ui/NpmVariantOutline';
 
 import UnstyledLink from '../components/UnstyledLink'
 
@@ -131,7 +132,7 @@ const drawerContent = (c, classes) => (
 		</List>
 		<Divider />
 		<div className={classes.drawerIconButtonPaper} >
-			<IconButton color="inherit" href="https://www.linkedin.com/in/gregbrisebois/" target="_blank" className={classes.iconButton} >
+			<IconButton color="inherit" href="https://www.linkedin.com/in/gregbrisebois/" target="_blank"  className={classes.iconButton} >
 				<LinkedinIcon />
 			</IconButton>
 			<IconButton color="inherit" href="https://github.com/gregoryjjb" target="_blank" className={classes.iconButton} >
@@ -140,8 +141,8 @@ const drawerContent = (c, classes) => (
 			<IconButton color="inherit" href="https://forums.unrealengine.com/member/179-gregdumb" target="_blank" className={classes.iconButton} >
 				<UnrealIcon />
 			</IconButton>
-			<IconButton color="inherit" href="mailto:gregoryjjb@gmail.com" target="_blank" className={classes.iconButton} >
-				<MailOutlineIcon />
+			<IconButton color="inherit" href="https://www.npmjs.com/~gregoryjjb" target="_blank" className={classes.iconButton} >
+				<NpmVariantOutlineIcon />
 			</IconButton>
 		</div>
 	</div>
