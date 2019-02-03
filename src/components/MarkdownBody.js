@@ -53,6 +53,15 @@ const styles = theme => ({
 		
 		'& img': {
 			maxWidth: '100%',
+		},
+
+		'& blockquote': {
+			fontStyle: 'italic',
+			borderLeft: `4px solid ${theme.palette.secondary.dark}`,
+			paddingLeft: 36,
+			marginLeft: 0,
+			color: 'grey',
+
 		}
 	},
 	metadata: {
