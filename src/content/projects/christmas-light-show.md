@@ -7,6 +7,8 @@ featured: true
 summary: Light show synced to music, running on a Raspberry Pi with a self-hosted web control interface and show editor
 ---
 
+> Note Dec 2018: an updated version of the project running on Node.js and React is currently in development. The new project has advanced features, such as the ability to skip songs, set timers, and configure the pinout through the web interface. You can [view a demo](https://relaxed-austin-5bfa65.netlify.com/) of what the project would look like when installed, or you can [check out the source code](https://github.com/gregoryjjb/bethlehem).
+
 The show runs on a Raspberry Pi and utilizes 8 channels. The project consisted of two parts: an editor to create the shows, and a player.
 
 Final result:
